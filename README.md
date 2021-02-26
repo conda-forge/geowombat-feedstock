@@ -5,11 +5,13 @@ Home: https://github.com/jgrss/geowombat
 
 Package license: MIT
 
-Feedstock license: BSD-3-Clause
+Feedstock license: [BSD-3-Clause](https://github.com/conda-forge/geowombat-feedstock/blob/master/LICENSE.txt)
 
 Summary: GeoWombat provides utilities to process geospatial raster data.
 
+Development: https://github.com/jgrss
 
+Documentation: https://geowombat.readthedocs.io/
 
 Current build status
 ====================
