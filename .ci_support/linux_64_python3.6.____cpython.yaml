@@ -11,7 +11,7 @@ channel_targets:
 docker_image:
 - quay.io/condaforge/linux-anvil-comp7
 gdal:
-- '3.2'
+- '3.3'
 pin_run_as_build:
   gdal:
     max_pin: x.x
