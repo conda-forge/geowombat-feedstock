@@ -1,11 +1,11 @@
 c_compiler:
 - vs2017
 channel_sources:
-- conda-forge,defaults
+- conda-forge
 channel_targets:
 - conda-forge main
 gdal:
-- '3.3'
+- '3.4'
 pin_run_as_build:
   gdal:
     max_pin: x.x
