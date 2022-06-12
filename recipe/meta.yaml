@@ -1,17 +1,17 @@
 {% set name = "geowombat" %}
-{% set version = "1.2.0" %}
+{% set version = "1.8.5" %}
 
 package:
-  name: "{{ name|lower }}"
-  version: "{{ version }}"
+  name: {{ name|lower }}
+  version: {{ version }}
 
 source:
-  url: "https://github.com/jgrss/{{ name }}/archive/{{ version }}.tar.gz"
-  sha256: 9c7026119e6647822a260496cf9064dca36ae333d143f89a82c63c08e90ab51f
+  url: https://github.com/jgrss/{{ name }}/archive/v{{ version }}.tar.gz
+  sha256: 885c72591d2b16b7af49f30052fd1683543acd1df564dd6756c72a2bbf911d77
 
 build:
-  number: 4
-  script: "{{ PYTHON }} -m pip install . -vv"
+  number: 0
+  script: {{ PYTHON }} -m pip install . -vv
 
 requirements:
   build:
@@ -59,11 +59,11 @@ test:
     - geowombat
 
 about:
-  home: "https://github.com/jgrss/geowombat"
+  home: https://github.com/jgrss/geowombat
   license: MIT
   license_family: MIT
   license_file: LICENSE.txt
-  summary: "GeoWombat provides utilities to process geospatial raster data."
+  summary: GeoWombat provides utilities to process geospatial raster data.
   doc_url: https://geowombat.readthedocs.io/
   dev_url: https://github.com/jgrss
 
