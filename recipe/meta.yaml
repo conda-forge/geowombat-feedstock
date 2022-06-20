@@ -11,11 +11,12 @@ source:
 
 build:
   number: 0
-  script: {{ PYTHON }} -m pip install . -vv
+  script: {{ PYTHON }} setup.py build && pip install . && rm -rf build/
 
 requirements:
   build:
     - {{ compiler('c') }}
+    - {{ compiler('cxx') }} 
     - libgomp  # [linux]
     - llvm-openmp  # [osx]
   host:
@@ -23,6 +24,7 @@ requirements:
     - python
     - gdal
     - cython
+    - numpy 
   run:
     - cython
     - python
@@ -55,6 +57,7 @@ requirements:
     - gdal
     - pyamg
     - pyproj
+    - {{ pin_compatible('numpy') }}
 
 
 test:
