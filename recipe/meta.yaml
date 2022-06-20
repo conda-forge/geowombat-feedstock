@@ -1,17 +1,17 @@
 {% set name = "geowombat" %}
-{% set version = "1.2.0" %}
+{% set version = "1.8.6" %}
 
 package:
-  name: "{{ name|lower }}"
-  version: "{{ version }}"
+  name: {{ name|lower }}
+  version: {{ version }}
 
 source:
-  url: "https://github.com/jgrss/{{ name }}/archive/{{ version }}.tar.gz"
-  sha256: 9c7026119e6647822a260496cf9064dca36ae333d143f89a82c63c08e90ab51f
+  url: https://github.com/jgrss/{{ name }}/archive/v{{ version }}.tar.gz
+  sha256: ad160dfdb41b663d9544557e38f1436fa28ca48007a84c8a2c6e30a7d80327dc
 
 build:
-  number: 4
-  script: "{{ PYTHON }} -m pip install . -vv"
+  number: 0
+  script: {{ PYTHON }} -m pip install . -vv
 
 requirements:
   build:
@@ -33,7 +33,6 @@ requirements:
     - rasterio
     - xarray
     - dask
-    - dask-ml
     - distributed
     - affine
     - joblib
@@ -43,33 +42,39 @@ requirements:
     - h5netcdf
     - netCDF4
     - scikit-learn
-    - numexpr
     - numcodecs
     - zarr
     - dateparser
     - wget  # [not win]
     - fsspec
-    - sphinx-automodapi
-    - sphinxcontrib-bibtex
-    - numpydoc
-    - deprecated
+    - python-graphviz
+    - requests
+    - retry
+    - privy
+    - pyyaml
+    - gdal
+    - pyamg
+    - pyproj
+
 
 test:
   imports:
     - geowombat
 
 about:
-  home: "https://github.com/jgrss/geowombat"
+  home: https://github.com/jgrss/geowombat
   license: MIT
   license_family: MIT
   license_file: LICENSE.txt
-  summary: "GeoWombat provides utilities to process geospatial raster data."
+  summary: GeoWombat provides utilities to process geospatial raster data.
   doc_url: https://geowombat.readthedocs.io/
   dev_url: https://github.com/jgrss
 
 extra:
   recipe-maintainers:
     - mxr-conda
-    - rluria14
     - ndmaxar
     - RyanHackney
+    - jgrss
+    - mmann1123
+    - rluria14
