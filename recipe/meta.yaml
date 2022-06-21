@@ -10,26 +10,32 @@ source:
   sha256: 9c7026119e6647822a260496cf9064dca36ae333d143f89a82c63c08e90ab51f
 
 build:
-  number: 4
+  number: 0
   script: "{{ PYTHON }} -m pip install . -vv"
 
 requirements:
   build:
+    - python                                 # [build_platform != target_platform]
+    - cross-python_{{ target_platform }}     # [build_platform != target_platform]
+    - cython                                 # [build_platform != target_platform]
+    - numpy                                  # [build_platform != target_platform]
     - {{ compiler('c') }}
-    - libgomp  # [linux]
-    - llvm-openmp  # [osx]
+    - {{ compiler('cxx') }}
   host:
     - pip
     - python
     - gdal
     - cython
+    - libgdal
+    - proj
   run:
     - cython
     - python
+    - libgdal
     - matplotlib-base
     - pandas
     - geopandas
-    - numpy
+    - {{ pin_compatible('numpy') }}
     - rasterio
     - xarray
     - dask
@@ -53,6 +59,7 @@ requirements:
     - sphinxcontrib-bibtex
     - numpydoc
     - deprecated
+    - proj
 
 test:
   imports:
