@@ -11,7 +11,7 @@ source:
 
 build:
   number: 0
-  script: {{ PYTHON }} setup.py build && pip install . && rm -rf build/
+  script: {{ PYTHON }} setup.py build && pip install .  
 
 requirements:
   build:
