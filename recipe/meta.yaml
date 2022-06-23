@@ -82,7 +82,5 @@ about:
 extra:
   recipe-maintainers:
     - mxr-conda
-    - ndmaxar
-    - RyanHackney
     - jgrss
     - mmann1123
