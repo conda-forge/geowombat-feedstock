@@ -222,10 +222,7 @@ In order to produce a uniquely identifiable distribution:
 Feedstock Maintainers
 =====================
 
-* [@RyanHackney](https://github.com/RyanHackney/)
 * [@jgrss](https://github.com/jgrss/)
 * [@mmann1123](https://github.com/mmann1123/)
 * [@mxr-conda](https://github.com/mxr-conda/)
-* [@ndmaxar](https://github.com/ndmaxar/)
-* [@rluria14](https://github.com/rluria14/)
 
