@@ -2,3 +2,4 @@ conda_forge_output_validation: true
 github:
   branch_name: main
   tooling_branch_name: main
+min_py_ver: '37'
