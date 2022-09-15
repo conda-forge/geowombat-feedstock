@@ -15,6 +15,7 @@ build:
 
 requirements:
   build:
+    skip: true  # [py<38]
     - python                                 # [build_platform != target_platform]
     - cross-python_{{ target_platform }}     # [build_platform != target_platform]
     - cython                                 # [build_platform != target_platform]
