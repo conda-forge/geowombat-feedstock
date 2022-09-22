@@ -1,5 +1,5 @@
 {% set name = "geowombat" %}
-{% set version = "2.0.7" %}
+{% set version = "2.0.9" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://github.com/jgrss/{{ name }}/archive/v{{ version }}.tar.gz
-  sha256: 2731f192e75fd0f761fabd56bf69174bf24a9b0e96622e52be97b7bb67aec604
+  sha256: b8a72b7c704dadd1f605b906a529908bc3275311ab37fca0983f12a9f2f2f7d6
 
 build:
   number: 0
