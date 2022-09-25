@@ -13,10 +13,6 @@ libgdal:
 numpy:
 - '1.20'
 pin_run_as_build:
-  gdal:
-    max_pin: x.x
-  libgdal:
-    max_pin: x.x
   python:
     min_pin: x.x
     max_pin: x.x
