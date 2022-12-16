@@ -19,7 +19,7 @@ gdal:
 libgdal:
 - '3.5'
 numpy:
-- '1.20'
+- '1.23'
 pin_run_as_build:
   python:
     min_pin: x.x
@@ -27,7 +27,7 @@ pin_run_as_build:
 proj:
 - 9.1.0
 python:
-- 3.9.* *_cpython
+- 3.11.* *_cpython
 target_platform:
 - linux-64
 zip_keys:
