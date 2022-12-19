@@ -16,8 +16,6 @@ gdal:
 - '3.6'
 libgdal:
 - '3.6'
-llvm_openmp:
-- '14'
 macos_machine:
 - x86_64-apple-darwin13.4.0
 numpy:
