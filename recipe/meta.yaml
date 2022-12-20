@@ -23,7 +23,6 @@ requirements:
     - {{ compiler('c') }}
     - {{ compiler('cxx') }}
     - libgomp  # [linux]
-    - llvm-openmp  # [osx or win]
     - clang         # [win]
   host:
     - pip
@@ -45,7 +44,6 @@ requirements:
     - distributed
     - affine
     - joblib
-    - opencv
     - tqdm
     - shapely
     - h5netcdf
