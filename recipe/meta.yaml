@@ -54,7 +54,7 @@ requirements:
     - dateparser
     - wget  # [not win]
     - fsspec
-    - python-graphviz>=0.20.1
+    - python-graphviz >=0.20.1
     - requests
     - retry
     - pyyaml
