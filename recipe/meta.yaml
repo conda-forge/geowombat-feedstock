@@ -86,7 +86,7 @@ test:
     - pytest tests/test_nodata.py  # [not win]
     - pytest tests/test_open.py
     - pytest tests/test_properties.py
-    - pytest tests/test_rad.py  # [not py38 or py39]
+    - pytest tests/test_rad.py  # [not py==38 or py==39]
     - pytest tests/test_rasterio.py  # [not win]
     - pytest tests/test_scaling.py
     - pytest tests/test_series.py  # [not win]
