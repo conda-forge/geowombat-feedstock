@@ -1,5 +1,5 @@
 {% set name = "geowombat" %}
-{% set version = "2.1.6" %}
+{% set version = "2.1.8" %}
 
 package:
   name: {{ name|lower }}
@@ -7,8 +7,9 @@ package:
 
 source:
   url: https://github.com/jgrss/{{ name }}/archive/v{{ version }}.tar.gz
-  sha256: fecff8796b21351b1d6893c44ba5d944f118cb1d49ee79570a1de4345202760a
-
+  sha256: aa32d8e83f956f45dbc6761bcdd9f9d46745587c8a843085dd8537538a4bd6ff  
+    
+ 
 build:
   number: 1
   skip: true  # [py<38]
@@ -26,7 +27,8 @@ requirements:
     - pip
 
   run:
-  - python
+  - {{ pin_compatible('python') }}
+  - python >=3.7,<=3.9.16
   - dask-core >=2023.1.0
   - distributed >=2023.1.0
   - geopandas >=0.8.0
@@ -47,6 +49,10 @@ requirements:
   - threadpoolctl >=3.1.0
   - setuptools >=59.5.0
   - cython >=0.29.0,<3.0.0
+  - jax
+ # - ray
+ # - sklearn-xarray 
+  - testfixtures
   - {{ pin_compatible('numpy') }}
 
 
@@ -54,6 +60,32 @@ requirements:
 test:
   imports:
     - geowombat
+  requires:
+    - pytest
+  source_files:
+    - tests
+  commands:
+    #- pytest tests   #RUN ALL TESTS 
+    - pytest tests/test_clip.py
+    - pytest tests/test_config.py
+#    - pytest tests/test_coreg.py
+    - pytest tests/test_dask_cluster.py
+    - pytest tests/test_extract.py
+    - pytest tests/test_gdal.py
+   # - pytest tests/test_load.py
+    - pytest tests/test_moving.py
+    - pytest tests/test_nodata.py
+    - pytest tests/test_open.py
+    - pytest tests/test_properties.py
+    #- pytest tests/test_rad.py
+    - pytest tests/test_rasterio.py
+    - pytest tests/test_scaling.py
+    - pytest tests/test_series.py
+    - pytest tests/test_sops.py
+    - pytest tests/test_vi.py
+    - pytest tests/test_write.py
+    - pytest tests/test_xarray.py
+
 
 about:
   home: https://github.com/jgrss/geowombat
@@ -69,3 +101,8 @@ extra:
     - mxr-conda
     - jgrss
     - mmann1123
+    
+    
+# notes:
+# build in mamba  https://conda-forge.org/docs/maintainer/maintainer_faq.html#mfaq-mamba-local
+# build local `python build-locally.py`

@@ -4,5 +4,20 @@ github:
   tooling_branch_name: main
 bot:
   automerge: true
+  inspection: hint-all  # generate hints using all methods
+
 conda_build:
   pkg_format: '2'
+  
+channels:
+  # sources selects the channels to pull packages from, in order.
+  sources:
+    - conda-forge
+    - defaults
+  # targets is a list of 2-lists, where the first element is the
+  # channel to push to and the second element is the label on that channel
+  targets:
+    - ["conda-forge", "main"]
+    
+build_with_mambabuild:
+  True
