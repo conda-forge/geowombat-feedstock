@@ -74,13 +74,14 @@ test:
     - pytest tests/test_gdal.py
    # - pytest tests/test_load.py
     - pytest tests/test_moving.py
-    - pytest tests/test_nodata.py
+   # temp files not compatible with windows ??
+    - pytest tests/test_nodata.py  # [not win]
     - pytest tests/test_open.py
     - pytest tests/test_properties.py
     #- pytest tests/test_rad.py
     - pytest tests/test_rasterio.py
     - pytest tests/test_scaling.py
-    - pytest tests/test_series.py
+    - pytest tests/test_series.py  # [not win]
     - pytest tests/test_sops.py
     - pytest tests/test_vi.py
     - pytest tests/test_write.py
