@@ -56,7 +56,7 @@ requirements:
   - setuptools >=59.5.0
   - cython >=0.29.0,<3.0.0
   - jax  # [not win]
- # - ray
+  - ray-default  # [not osx]
  # - sklearn-xarray  
   - testfixtures
   - {{ pin_compatible('numpy') }}
@@ -79,7 +79,7 @@ test:
     - pytest tests/test_dask_cluster.py
     - pytest tests/test_extract.py
     - pytest tests/test_gdal.py
-    - pytest tests/test_load.py
+    - pytest tests/test_load.py  # [not osx]
     - pytest tests/test_moving.py
    # temp files not compatible with windows ??
     - pytest tests/test_nodata.py  # [not win]
@@ -114,3 +114,5 @@ extra:
 # notes:
 # build in mamba  https://conda-forge.org/docs/maintainer/maintainer_faq.html#mfaq-mamba-local
 # build local `python build-locally.py`
+# optional extras example https://github.com/conda-forge/ray-packages-feedstock/blob/main/recipe/meta.yaml
+
