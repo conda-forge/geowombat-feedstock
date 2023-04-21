@@ -17,9 +17,15 @@ build:
 
 requirements:
   build:
-     - {{ compiler('c') }}
+    - {{ compiler('c') }}
+    - python                                 # [build_platform != target_platform]
+    - cross-python_{{ target_platform }}     # [build_platform != target_platform]
+    - cython                                 # [build_platform != target_platform]
+    - clang  # [win]
+    - numpy                                  # [build_platform != target_platform]
+
   host:
-    - python >=3.7,<=3.9.16                  
+    - python      
     - setuptools >=59.5.0
     - wheel
     - cython >=0.29.0,<3.0.0
@@ -28,7 +34,7 @@ requirements:
 
   run:
   - {{ pin_compatible('python') }}
-  - python >=3.7,<=3.9.16
+  - python 
   - dask-core >=2023.1.0
   - distributed >=2023.1.0
   - geopandas >=0.8.0
