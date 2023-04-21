@@ -11,7 +11,7 @@ source:
     
  
 build:
-  number: 1
+  number: 0
   skip: true  # [py<38]
   script: {{ PYTHON }} setup.py build && pip install .
 
