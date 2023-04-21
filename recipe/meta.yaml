@@ -90,7 +90,7 @@ test:
     - pytest tests/test_series.py  # [not win]
     - pytest tests/test_sops.py
     - pytest tests/test_vi.py
-    - pytest tests/test_write.py
+    - pytest tests/test_write.py  # [not win]
     - pytest tests/test_xarray.py
 
 
