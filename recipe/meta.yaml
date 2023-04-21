@@ -12,7 +12,7 @@ source:
  
 build:
   number: 0
-  skip: true  # [py<38]
+  skip: true  # [py<37 or py>39]
   script: {{ PYTHON }} setup.py build && pip install .
 
 requirements:
@@ -109,8 +109,7 @@ extra:
     - mxr-conda
     - jgrss
     - mmann1123
-    
-    
+
 # notes:
 # build in mamba  https://conda-forge.org/docs/maintainer/maintainer_faq.html#mfaq-mamba-local
 # build local `python build-locally.py`
