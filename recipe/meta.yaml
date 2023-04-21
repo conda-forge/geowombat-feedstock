@@ -9,7 +9,8 @@ source:
   url: https://github.com/jgrss/{{ name }}/archive/v{{ version }}.tar.gz
   sha256: aa32d8e83f956f45dbc6761bcdd9f9d46745587c8a843085dd8537538a4bd6ff  
     
- 
+
+#skip py controls python version builds
 build:
   number: 0
   skip: true  # [py<37 or py>39]
@@ -85,7 +86,7 @@ test:
     - pytest tests/test_nodata.py  # [not win]
     - pytest tests/test_open.py
     - pytest tests/test_properties.py
-    - pytest tests/test_rad.py
+    - pytest tests/test_rad.py  # [not py38 or py39]
     - pytest tests/test_rasterio.py  # [not win]
     - pytest tests/test_scaling.py
     - pytest tests/test_series.py  # [not win]
@@ -114,4 +115,3 @@ extra:
 # build in mamba  https://conda-forge.org/docs/maintainer/maintainer_faq.html#mfaq-mamba-local
 # build local `python build-locally.py`
 # optional extras example https://github.com/conda-forge/ray-packages-feedstock/blob/main/recipe/meta.yaml
-
