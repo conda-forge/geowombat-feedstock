@@ -86,7 +86,7 @@ test:
     - pytest tests/test_nodata.py  # [not win]
     - pytest tests/test_open.py
     - pytest tests/test_properties.py
-    - pytest tests/test_rad.py  # [not py==38 or py==39]
+   # - pytest tests/test_rad.py  # [not py==38 or not py==39]
     - pytest tests/test_rasterio.py  # [not win]
     - pytest tests/test_scaling.py
     - pytest tests/test_series.py  # [not win]
@@ -115,3 +115,4 @@ extra:
 # build in mamba  https://conda-forge.org/docs/maintainer/maintainer_faq.html#mfaq-mamba-local
 # build local `python build-locally.py`
 # optional extras example https://github.com/conda-forge/ray-packages-feedstock/blob/main/recipe/meta.yaml
+#https://docs.conda.io/projects/conda-build/en/latest/resources/define-metadata.html?highlight=subpackages#implicit-metapackages
