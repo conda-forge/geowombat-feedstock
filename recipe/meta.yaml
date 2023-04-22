@@ -33,7 +33,8 @@ requirements:
         - numpy >=1.19.0
         - pip
     run:
-        - python 
+        - {{ pin_compatible('python') }}
+        - python
         - dask-core >=2023.1.0
         - distributed >=2023.1.0
         - geopandas >=0.8.0
@@ -173,6 +174,9 @@ outputs:
 # - sklearn-xarray  
 
 
+
+
+
 about:
   home: https://github.com/jgrss/geowombat
   license: MIT
@@ -190,7 +194,7 @@ extra:
 
 # notes:
 # conda smithy recipe-lint
-# conda smithy rerender [--commit]
+# conda smithy rerender  
 # build in mamba  https://conda-forge.org/docs/maintainer/maintainer_faq.html#mfaq-mamba-local
 # build local `python build-locally.py`
 # optional extras example https://github.com/conda-forge/ray-packages-feedstock/blob/main/recipe/meta.yaml
