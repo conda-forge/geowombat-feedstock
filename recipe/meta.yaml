@@ -33,35 +33,110 @@ requirements:
     - numpy >=1.19.0
     - pip
 
-  run:
-  - {{ pin_compatible('python') }}
-  - python 
-  - dask-core >=2023.1.0
-  - distributed >=2023.1.0
-  - geopandas >=0.8.0
-  - joblib >=0.16.0
-  - matplotlib-base >=3.3.0
-  - pandas >=1.0.0
-  - pyproj >=3.0.0,<=3.4.0
-  - rasterio >=1.3.0,<2.0.0
-  - retry
-  - requests >=2.20.0
-  - scikit-learn >=0.23.0
-  - scipy >=1.5.0
-  - shapely >=1.7.0
-  - tqdm >=4.62.0
-  - xarray >=2023.1.0
-  - h5netcdf >=1.0.2
-  - cryptography >=38.0.0
-  - threadpoolctl >=3.1.0
-  - setuptools >=59.5.0
-  - cython >=0.29.0,<3.0.0
-  - jax  # [not win]
-  - ray-default  # [not osx]
- # - sklearn-xarray  
-  - testfixtures
-  - {{ pin_compatible('numpy') }}
+outputs:
+    - name: geowombat-core
+      requirements:
+         run:
+            - python 
+            - dask-core >=2023.1.0
+            - distributed >=2023.1.0
+            - geopandas >=0.8.0
+            - joblib >=0.16.0
+            - matplotlib-base >=3.3.0
+            - pandas >=1.0.0
+            - pyproj >=3.0.0,<=3.4.0
+            - rasterio >=1.3.0,<2.0.0
+            - retry
+            - requests >=2.20.0
+            - scikit-learn >=0.23.0
+            - scipy >=1.5.0
+            - shapely >=1.7.0
+            - tqdm >=4.62.0
+            - xarray >=2023.1.0
+            - h5netcdf >=1.0.2
+            - cryptography >=38.0.0
+            - threadpoolctl >=3.1.0
+            - setuptools >=59.5.0
+            - {{ pin_compatible('numpy') }}
+      test: 
+            - pytest tests/test_clip.py
+            - pytest tests/test_config.py
 
+    - name: geowombat-coreg
+      requirements:
+         run:
+            - earthpy
+            - pyfftw ==0.13.1
+            - bottleneck
+            - cartopy
+            - cmocean
+            - dill
+            - geoarray >=0.15.0
+            - geojson
+            - folium >=0.6.0,!=0.12.0
+            - pykrige
+            # - py_tools_ds >=0.18.0  # not conda
+
+    - name: geowombat-ml
+      requirements:
+         run:
+            - dask-ml >=2022.5.27
+            - lightgbm
+            - gw-sklearn-xarray #sklearn-xarray @git+https://github.com/jgrss/sklearn-xarray.git
+    - name: geowombat-perf
+      requirements:
+         run:
+            - rtree
+            - pygeos
+            - netCDF4
+            - ray-core
+    - name: geowombat-stac
+      requirements:
+         run:
+            - stackstac @git+https://github.com/jgrss/stackstac.git
+            - pystac-client
+            - sat-search
+            - planetary-computer
+            - Rich
+            - wget
+    - name: geowombat-tests
+      requirements:
+         run:
+            - testfixtures
+            - jax
+            - jaxlib
+            - pre-commit
+            - black
+            - flake8
+            - docformatter
+            - isort
+    - name: geowombat-time
+      requirements:
+         run:  
+            - dateparser
+    - name: geowombat-view
+      requirements:
+         run:  
+            - ipython
+            - bokeh
+            - descartes
+            - python-graphviz
+    - name: geowombat-web
+      requirements:
+         run:             
+            - gsutil
+            - requests
+            - wget
+    - name: geowombat-zarr
+      requirements:
+         run:    
+            - zarr
+            - numcodecs
+
+
+           # - jax  # [not win]
+          #  - ray-default  # [not osx]
+            # - sklearn-xarray  
 
 
 test:
@@ -73,8 +148,7 @@ test:
     - tests
   commands:
     #- pytest tests   #RUN ALL TESTS 
-    - pytest tests/test_clip.py
-    - pytest tests/test_config.py
+
     # coreg requires 
 #    - pytest tests/test_coreg.py
     - pytest tests/test_dask_cluster.py
