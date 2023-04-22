@@ -58,36 +58,65 @@ requirements:
 test: 
     imports:
         - geowombat
-    requires:
-        - pytest
-    source_files:
-        - tests
-    commands:
-        #- pytest tests   #RUN ALL TESTS 
-        - pytest tests/test_clip.py
-        - pytest tests/test_config.py    
-        # coreg requires 
-        #    - pytest tests/test_coreg.py
-        - pytest tests/test_dask_cluster.py
-        - pytest tests/test_extract.py
-        - pytest tests/test_gdal.py
-        - pytest tests/test_load.py  # [not osx]
-        - pytest tests/test_moving.py
-        #- pytest tests/test_ml.py
-        # temp files not compatible with windows ??
-        - pytest tests/test_nodata.py  # [not win]
-        - pytest tests/test_open.py
-        - pytest tests/test_properties.py
-        # - pytest tests/test_rad.py  # [not py==38 or not py==39]
-        - pytest tests/test_rasterio.py  # [not win]
-        - pytest tests/test_scaling.py
-        - pytest tests/test_series.py  # [not win]
-        - pytest tests/test_sops.py
-        - pytest tests/test_vi.py
-        - pytest tests/test_write.py  # [not win]
-        - pytest tests/test_xarray.py
+ 
 
 outputs:
+    - name: geowombat
+      requirements:
+         run:
+            - {{ pin_compatible('python') }}
+            - python
+            - dask-core >=2023.1.0
+            - distributed >=2023.1.0
+            - geopandas >=0.8.0
+            - joblib >=0.16.0
+            - matplotlib-base >=3.3.0
+            - pandas >=1.0.0
+            - pyproj >=3.0.0,<=3.4.0
+            - rasterio >=1.3.0,<2.0.0
+            - retry
+            - requests >=2.20.0
+            - scikit-learn >=0.23.0
+            - scipy >=1.5.0
+            - shapely >=1.7.0
+            - tqdm >=4.62.0
+            - xarray >=2023.1.0
+            - h5netcdf >=1.0.2
+            - cryptography >=38.0.0
+            - threadpoolctl >=3.1.0
+            - setuptools >=59.5.0
+            - {{ pin_compatible('numpy') }}         
+      test: 
+        imports:
+            - geowombat
+        requires:
+            - pytest
+        source_files:
+            - tests
+        commands:
+            #- pytest tests   #RUN ALL TESTS 
+            - pytest tests/test_clip.py
+            - pytest tests/test_config.py    
+            # coreg requires 
+            #    - pytest tests/test_coreg.py
+            - pytest tests/test_dask_cluster.py
+            - pytest tests/test_extract.py
+            - pytest tests/test_gdal.py
+            - pytest tests/test_load.py  # [not osx]
+            - pytest tests/test_moving.py
+            #- pytest tests/test_ml.py
+            # temp files not compatible with windows ??
+            - pytest tests/test_nodata.py  # [not win]
+            - pytest tests/test_open.py
+            - pytest tests/test_properties.py
+            # - pytest tests/test_rad.py  # [not py==38 or not py==39]
+            - pytest tests/test_rasterio.py  # [not win]
+            - pytest tests/test_scaling.py
+            - pytest tests/test_series.py  # [not win]
+            - pytest tests/test_sops.py
+            - pytest tests/test_vi.py
+            - pytest tests/test_write.py  # [not win]
+            - pytest tests/test_xarray.py
     - name: geowombat-coreg
       requirements:
          run:
