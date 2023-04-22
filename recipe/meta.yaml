@@ -173,9 +173,6 @@ outputs:
 # - sklearn-xarray  
 
 
-
-
-
 about:
   home: https://github.com/jgrss/geowombat
   license: MIT
