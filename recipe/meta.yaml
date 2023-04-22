@@ -93,7 +93,7 @@ outputs:
     - name: geowombat-stac
       requirements:
          run:
-            - stackstac @git+https://github.com/jgrss/stackstac.git
+            - stackstac #@git+https://github.com/jgrss/stackstac.git
             - pystac-client
             - sat-search
             - planetary-computer
