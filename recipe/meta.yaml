@@ -33,7 +33,7 @@ requirements:
     - numpy >=1.19.0
     - pip
 
-outputs:
+ outputs:
     - name: geowombat-core
       requirements:
          run:
@@ -137,7 +137,7 @@ outputs:
            # - jax  # [not win]
           #  - ray-default  # [not osx]
             # - sklearn-xarray  
-
+ 
 
 test:
   imports:
@@ -148,7 +148,9 @@ test:
     - tests
   commands:
     #- pytest tests   #RUN ALL TESTS 
+ 
 
+ 
     # coreg requires 
 #    - pytest tests/test_coreg.py
     - pytest tests/test_dask_cluster.py
