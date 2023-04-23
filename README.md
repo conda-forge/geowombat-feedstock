@@ -31,45 +31,24 @@ Current build status
         <table>
           <thead><tr><th>Variant</th><th>Status</th></tr></thead>
           <tbody><tr>
-              <td>linux_64_python3.8.____cpython</td>
+              <td>linux_64</td>
               <td>
                 <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=10789&branchName=main">
-                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/geowombat-feedstock?branchName=main&jobName=linux&configuration=linux%20linux_64_python3.8.____cpython" alt="variant">
+                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/geowombat-feedstock?branchName=main&jobName=linux&configuration=linux%20linux_64_" alt="variant">
                 </a>
               </td>
             </tr><tr>
-              <td>linux_64_python3.9.____cpython</td>
+              <td>osx_64</td>
               <td>
                 <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=10789&branchName=main">
-                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/geowombat-feedstock?branchName=main&jobName=linux&configuration=linux%20linux_64_python3.9.____cpython" alt="variant">
+                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/geowombat-feedstock?branchName=main&jobName=osx&configuration=osx%20osx_64_" alt="variant">
                 </a>
               </td>
             </tr><tr>
-              <td>osx_64_python3.8.____cpython</td>
+              <td>win_64</td>
               <td>
                 <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=10789&branchName=main">
-                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/geowombat-feedstock?branchName=main&jobName=osx&configuration=osx%20osx_64_python3.8.____cpython" alt="variant">
-                </a>
-              </td>
-            </tr><tr>
-              <td>osx_64_python3.9.____cpython</td>
-              <td>
-                <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=10789&branchName=main">
-                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/geowombat-feedstock?branchName=main&jobName=osx&configuration=osx%20osx_64_python3.9.____cpython" alt="variant">
-                </a>
-              </td>
-            </tr><tr>
-              <td>win_64_python3.8.____cpython</td>
-              <td>
-                <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=10789&branchName=main">
-                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/geowombat-feedstock?branchName=main&jobName=win&configuration=win%20win_64_python3.8.____cpython" alt="variant">
-                </a>
-              </td>
-            </tr><tr>
-              <td>win_64_python3.9.____cpython</td>
-              <td>
-                <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=10789&branchName=main">
-                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/geowombat-feedstock?branchName=main&jobName=win&configuration=win%20win_64_python3.9.____cpython" alt="variant">
+                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/geowombat-feedstock?branchName=main&jobName=win&configuration=win%20win_64_" alt="variant">
                 </a>
               </td>
             </tr>
@@ -86,6 +65,7 @@ Current release info
 | Name | Downloads | Version | Platforms |
 | --- | --- | --- | --- |
 | [![Conda Recipe](https://img.shields.io/badge/recipe-geowombat-green.svg)](https://anaconda.org/conda-forge/geowombat) | [![Conda Downloads](https://img.shields.io/conda/dn/conda-forge/geowombat.svg)](https://anaconda.org/conda-forge/geowombat) | [![Conda Version](https://img.shields.io/conda/vn/conda-forge/geowombat.svg)](https://anaconda.org/conda-forge/geowombat) | [![Conda Platforms](https://img.shields.io/conda/pn/conda-forge/geowombat.svg)](https://anaconda.org/conda-forge/geowombat) |
+| [![Conda Recipe](https://img.shields.io/badge/recipe-geowombat--core-green.svg)](https://anaconda.org/conda-forge/geowombat-core) | [![Conda Downloads](https://img.shields.io/conda/dn/conda-forge/geowombat-core.svg)](https://anaconda.org/conda-forge/geowombat-core) | [![Conda Version](https://img.shields.io/conda/vn/conda-forge/geowombat-core.svg)](https://anaconda.org/conda-forge/geowombat-core) | [![Conda Platforms](https://img.shields.io/conda/pn/conda-forge/geowombat-core.svg)](https://anaconda.org/conda-forge/geowombat-core) |
 
 Installing geowombat
 ====================
@@ -97,16 +77,16 @@ conda config --add channels conda-forge
 conda config --set channel_priority strict
 ```
 
-Once the `conda-forge` channel has been enabled, `geowombat` can be installed with `conda`:
+Once the `conda-forge` channel has been enabled, `geowombat, geowombat-core` can be installed with `conda`:
 
 ```
-conda install geowombat
+conda install geowombat geowombat-core
 ```
 
 or with `mamba`:
 
 ```
-mamba install geowombat
+mamba install geowombat geowombat-core
 ```
 
 It is possible to list all of the versions of `geowombat` available on your platform with `conda`:

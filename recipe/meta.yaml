@@ -34,36 +34,8 @@ requirements:
     - pip
 
   run:
-  - {{ pin_compatible('python') }}
-  - python 
-  - dask-core >=2023.1.0
-  - distributed >=2023.1.0
-  - geopandas >=0.8.0
-  - joblib >=0.16.0
-  - matplotlib-base >=3.3.0
-  - pandas >=1.0.0
-  - pyproj >=3.0.0,<=3.4.0
-  - rasterio >=1.3.0,<2.0.0
-  - retry
-  - requests >=2.20.0
-  - scikit-learn >=0.23.0
-  - scipy >=1.5.0
-  - shapely >=1.7.0
-  - tqdm >=4.62.0
-  - xarray >=2023.1.0
-  - h5netcdf >=1.0.2
-  - cryptography >=38.0.0
-  - threadpoolctl >=3.1.0
-  - setuptools >=59.5.0
-  - cython >=0.29.0,<3.0.0
-  - jax  # [not win]
-  - ray-default  # [not osx]
- # - sklearn-xarray  
-  - testfixtures
-  - {{ pin_compatible('numpy') }}
-
-
-
+    #- {{ pin_subpackage('geowombat-core') }}
+     - geowombat-core
 test:
   imports:
     - geowombat
@@ -95,6 +67,38 @@ test:
     - pytest tests/test_write.py  # [not win]
     - pytest tests/test_xarray.py
 
+outputs:
+    - name: geowombat-core
+      requirements:
+        run:
+          - {{ pin_compatible('python') }}
+          - python 
+          - dask-core >=2023.1.0
+          - distributed >=2023.1.0
+          - geopandas >=0.8.0
+          - joblib >=0.16.0
+          - matplotlib-base >=3.3.0
+          - pandas >=1.0.0
+          - pyproj >=3.0.0,<=3.4.0
+          - rasterio >=1.3.0,<2.0.0
+          - retry
+          - requests >=2.20.0
+          - scikit-learn >=0.23.0
+          - scipy >=1.5.0
+          - shapely >=1.7.0
+          - tqdm >=4.62.0
+          - xarray >=2023.1.0
+          - h5netcdf >=1.0.2
+          - cryptography >=38.0.0
+          - threadpoolctl >=3.1.0
+          - setuptools >=59.5.0
+          - cython >=0.29.0,<3.0.0
+          - jax  # [not win]
+          - ray-default  # [not osx]
+          # - sklearn-xarray  
+          - testfixtures
+          - {{ pin_compatible('numpy') }}
+
 
 about:
   home: https://github.com/jgrss/geowombat
@@ -112,6 +116,8 @@ extra:
     - mmann1123
 
 # notes:
+# conda smithy recipe-lint
+# conda smithy rerender  
 # build in mamba  https://conda-forge.org/docs/maintainer/maintainer_faq.html#mfaq-mamba-local
 # build local `python build-locally.py`
 # optional extras example https://github.com/conda-forge/ray-packages-feedstock/blob/main/recipe/meta.yaml
