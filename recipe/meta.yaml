@@ -12,7 +12,7 @@ source:
 
 #skip py controls python version builds
 build:
-  number: 0
+  number: 1
   skip: true  # [py<37 or py>39]
   script: {{ PYTHON }} setup.py build && pip install .
 
