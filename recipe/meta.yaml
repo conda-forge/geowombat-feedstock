@@ -34,8 +34,8 @@ requirements:
     - pip
 
   run:
-    #- {{ pin_subpackage('geowombat-core') }}
-     - geowombat-core
+    - {{ pin_subpackage('geowombat-core') }}
+    #- geowombat-core
 test:
   imports:
     - geowombat
