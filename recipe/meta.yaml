@@ -14,7 +14,7 @@ source:
 build:
     number: 0
     skip: true  # [py<37 or py>39]
-    script: {{ PYTHON }} setup.py build && pip install .
+    script: {{ PYTHON }} setup.py build && pip install . --use-pep517
 
 requirements:
     build:
