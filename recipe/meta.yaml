@@ -63,39 +63,44 @@ requirements:
 
 
 
-test:
-  imports:
-    - geowombat
-  requires:
-    - pytest
-  source_files:
-    - tests
-  commands:
-    #- pytest tests   #RUN ALL TESTS 
-    - pytest tests/test_clip.py
-    - pytest tests/test_config.py
-    # coreg requires 
-#    - pytest tests/test_coreg.py
-    - pytest tests/test_dask_cluster.py
-    - pytest tests/test_extract.py
-    - pytest tests/test_gdal.py
-    - pytest tests/test_load.py  # [not osx]
-    - pytest tests/test_moving.py
-   # temp files not compatible with windows ??
-    - pytest tests/test_nodata.py  # [not win]
-    - pytest tests/test_open.py
-    - pytest tests/test_properties.py
-   # - pytest tests/test_rad.py  # [not py==38 or not py==39]
-    - pytest tests/test_rasterio.py  # [not win]
-    - pytest tests/test_scaling.py
-    - pytest tests/test_series.py  # [not win]
-    - pytest tests/test_sops.py
-    - pytest tests/test_vi.py
-    - pytest tests/test_write.py  # [not win]
-    - pytest tests/test_xarray.py
+
 
 
 outputs:
+    - name: geowombat
+      requirements:
+          - python 
+      test:
+        imports:
+          - geowombat
+        requires:
+          - pytest
+        source_files:
+          - tests
+        commands:
+          #- pytest tests   #RUN ALL TESTS 
+          - pytest tests/test_clip.py
+          - pytest tests/test_config.py
+          # coreg requires 
+      #    - pytest tests/test_coreg.py
+          - pytest tests/test_dask_cluster.py
+          - pytest tests/test_extract.py
+          - pytest tests/test_gdal.py
+          - pytest tests/test_load.py  # [not osx]
+          - pytest tests/test_moving.py
+        # temp files not compatible with windows ??
+          - pytest tests/test_nodata.py  # [not win]
+          - pytest tests/test_open.py
+          - pytest tests/test_properties.py
+        # - pytest tests/test_rad.py  # [not py==38 or not py==39]
+          - pytest tests/test_rasterio.py  # [not win]
+          - pytest tests/test_scaling.py
+          - pytest tests/test_series.py  # [not win]
+          - pytest tests/test_sops.py
+          - pytest tests/test_vi.py
+          - pytest tests/test_write.py  # [not win]
+          - pytest tests/test_xarray.py
+          
     - name: geowombat-perf
       requirements:
           - python 
