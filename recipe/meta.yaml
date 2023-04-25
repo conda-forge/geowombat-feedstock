@@ -25,7 +25,13 @@ requirements:
     - clang  # [win]
     - numpy                                  # [build_platform != target_platform]
 
-
+  host:
+    - python      
+    - setuptools >=59.5.0
+    - wheel
+    - cython >=0.29.0,<3.0.0
+    - numpy >=1.19.0
+    - pip
 
 
 
