@@ -25,7 +25,7 @@ Current release info
 
 | Name | Downloads | Version | Platforms |
 | --- | --- | --- | --- |
-| [![Conda Recipe](https://img.shields.io/badge/recipe-geowombat--core-green.svg)](https://anaconda.org/conda-forge/geowombat-core) | [![Conda Downloads](https://img.shields.io/conda/dn/conda-forge/geowombat-core.svg)](https://anaconda.org/conda-forge/geowombat-core) | [![Conda Version](https://img.shields.io/conda/vn/conda-forge/geowombat-core.svg)](https://anaconda.org/conda-forge/geowombat-core) | [![Conda Platforms](https://img.shields.io/conda/pn/conda-forge/geowombat-core.svg)](https://anaconda.org/conda-forge/geowombat-core) |
+| [![Conda Recipe](https://img.shields.io/badge/recipe-geowombat--perf-green.svg)](https://anaconda.org/conda-forge/geowombat-perf) | [![Conda Downloads](https://img.shields.io/conda/dn/conda-forge/geowombat-perf.svg)](https://anaconda.org/conda-forge/geowombat-perf) | [![Conda Version](https://img.shields.io/conda/vn/conda-forge/geowombat-perf.svg)](https://anaconda.org/conda-forge/geowombat-perf) | [![Conda Platforms](https://img.shields.io/conda/pn/conda-forge/geowombat-perf.svg)](https://anaconda.org/conda-forge/geowombat-perf) |
 
 Installing geowombat
 ====================
@@ -37,41 +37,41 @@ conda config --add channels conda-forge
 conda config --set channel_priority strict
 ```
 
-Once the `conda-forge` channel has been enabled, `geowombat-core` can be installed with `conda`:
+Once the `conda-forge` channel has been enabled, `geowombat-perf` can be installed with `conda`:
 
 ```
-conda install geowombat-core
-```
-
-or with `mamba`:
-
-```
-mamba install geowombat-core
-```
-
-It is possible to list all of the versions of `geowombat-core` available on your platform with `conda`:
-
-```
-conda search geowombat-core --channel conda-forge
+conda install geowombat-perf
 ```
 
 or with `mamba`:
 
 ```
-mamba search geowombat-core --channel conda-forge
+mamba install geowombat-perf
+```
+
+It is possible to list all of the versions of `geowombat-perf` available on your platform with `conda`:
+
+```
+conda search geowombat-perf --channel conda-forge
+```
+
+or with `mamba`:
+
+```
+mamba search geowombat-perf --channel conda-forge
 ```
 
 Alternatively, `mamba repoquery` may provide more information:
 
 ```
 # Search all versions available on your platform:
-mamba repoquery search geowombat-core --channel conda-forge
+mamba repoquery search geowombat-perf --channel conda-forge
 
-# List packages depending on `geowombat-core`:
-mamba repoquery whoneeds geowombat-core --channel conda-forge
+# List packages depending on `geowombat-perf`:
+mamba repoquery whoneeds geowombat-perf --channel conda-forge
 
-# List dependencies of `geowombat-core`:
-mamba repoquery depends geowombat-core --channel conda-forge
+# List dependencies of `geowombat-perf`:
+mamba repoquery depends geowombat-perf --channel conda-forge
 ```
 
 

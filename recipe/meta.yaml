@@ -16,18 +16,17 @@ build:
   skip: true  # [py<37 or py>39]
   script: {{ PYTHON }} setup.py build && pip install .
 
-requirements:
-  build:
-    - {{ compiler('c') }}
-    - python                                 # [build_platform != target_platform]
-    - cross-python_{{ target_platform }}     # [build_platform != target_platform]
-    - cython                                 # [build_platform != target_platform]
-    - clang  # [win]
-    - numpy                                  # [build_platform != target_platform]
-
 outputs:
   - name: geowombat
     requirements:
+      build:
+        - {{ compiler('c') }}
+        - python                                 # [build_platform != target_platform]
+        - cross-python_{{ target_platform }}     # [build_platform != target_platform]
+        - cython                                 # [build_platform != target_platform]
+        - clang  # [win]
+        - numpy                                  # [build_platform != target_platform]
+        
       host:
         - python      
         - setuptools >=59.5.0
@@ -87,7 +86,7 @@ outputs:
         - pytest tests/test_nodata.py  # [not win]
         - pytest tests/test_open.py
         - pytest tests/test_properties.py
-      # - pytest tests/test_rad.py  # [not py==38 or not py==39]
+      # - pytest tests/test_rad.py  # [not osx or win]
         - pytest tests/test_rasterio.py  # [not win]
         - pytest tests/test_scaling.py
         - pytest tests/test_series.py  # [not win]
@@ -97,10 +96,30 @@ outputs:
         - pytest tests/test_xarray.py
 
 outputs:
-    - name: geowombat-core
+    - name: geowombat-perf
       requirements:
-        run:
+       
+        build:
+          - {{ compiler('c') }}
+          - python                                 # [build_platform != target_platform]
+          - cross-python_{{ target_platform }}     # [build_platform != target_platform]
+          - cython                                 # [build_platform != target_platform]
+          - clang  # [win]
+          - numpy                                  # [build_platform != target_platform]
+          
+        host:
+          - python      
+          - setuptools >=59.5.0
+          - wheel
+          - cython >=0.29.0,<3.0.0
+          - numpy >=1.19.0
+          - pip
 
+        run:
+          - rtree
+          - pygeos
+          - netCDF4
+          - ray-default >=2.3.0
 
 
 about:
