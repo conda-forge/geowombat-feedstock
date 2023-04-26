@@ -88,7 +88,6 @@ Current release info
 | [![Conda Recipe](https://img.shields.io/badge/recipe-geowombat-green.svg)](https://anaconda.org/conda-forge/geowombat) | [![Conda Downloads](https://img.shields.io/conda/dn/conda-forge/geowombat.svg)](https://anaconda.org/conda-forge/geowombat) | [![Conda Version](https://img.shields.io/conda/vn/conda-forge/geowombat.svg)](https://anaconda.org/conda-forge/geowombat) | [![Conda Platforms](https://img.shields.io/conda/pn/conda-forge/geowombat.svg)](https://anaconda.org/conda-forge/geowombat) |
 | [![Conda Recipe](https://img.shields.io/badge/recipe-geowombat--coreg-green.svg)](https://anaconda.org/conda-forge/geowombat-coreg) | [![Conda Downloads](https://img.shields.io/conda/dn/conda-forge/geowombat-coreg.svg)](https://anaconda.org/conda-forge/geowombat-coreg) | [![Conda Version](https://img.shields.io/conda/vn/conda-forge/geowombat-coreg.svg)](https://anaconda.org/conda-forge/geowombat-coreg) | [![Conda Platforms](https://img.shields.io/conda/pn/conda-forge/geowombat-coreg.svg)](https://anaconda.org/conda-forge/geowombat-coreg) |
 | [![Conda Recipe](https://img.shields.io/badge/recipe-geowombat--docs-green.svg)](https://anaconda.org/conda-forge/geowombat-docs) | [![Conda Downloads](https://img.shields.io/conda/dn/conda-forge/geowombat-docs.svg)](https://anaconda.org/conda-forge/geowombat-docs) | [![Conda Version](https://img.shields.io/conda/vn/conda-forge/geowombat-docs.svg)](https://anaconda.org/conda-forge/geowombat-docs) | [![Conda Platforms](https://img.shields.io/conda/pn/conda-forge/geowombat-docs.svg)](https://anaconda.org/conda-forge/geowombat-docs) |
-| [![Conda Recipe](https://img.shields.io/badge/recipe-geowombat--ml-green.svg)](https://anaconda.org/conda-forge/geowombat-ml) | [![Conda Downloads](https://img.shields.io/conda/dn/conda-forge/geowombat-ml.svg)](https://anaconda.org/conda-forge/geowombat-ml) | [![Conda Version](https://img.shields.io/conda/vn/conda-forge/geowombat-ml.svg)](https://anaconda.org/conda-forge/geowombat-ml) | [![Conda Platforms](https://img.shields.io/conda/pn/conda-forge/geowombat-ml.svg)](https://anaconda.org/conda-forge/geowombat-ml) |
 | [![Conda Recipe](https://img.shields.io/badge/recipe-geowombat--perf-green.svg)](https://anaconda.org/conda-forge/geowombat-perf) | [![Conda Downloads](https://img.shields.io/conda/dn/conda-forge/geowombat-perf.svg)](https://anaconda.org/conda-forge/geowombat-perf) | [![Conda Version](https://img.shields.io/conda/vn/conda-forge/geowombat-perf.svg)](https://anaconda.org/conda-forge/geowombat-perf) | [![Conda Platforms](https://img.shields.io/conda/pn/conda-forge/geowombat-perf.svg)](https://anaconda.org/conda-forge/geowombat-perf) |
 | [![Conda Recipe](https://img.shields.io/badge/recipe-geowombat--stac-green.svg)](https://anaconda.org/conda-forge/geowombat-stac) | [![Conda Downloads](https://img.shields.io/conda/dn/conda-forge/geowombat-stac.svg)](https://anaconda.org/conda-forge/geowombat-stac) | [![Conda Version](https://img.shields.io/conda/vn/conda-forge/geowombat-stac.svg)](https://anaconda.org/conda-forge/geowombat-stac) | [![Conda Platforms](https://img.shields.io/conda/pn/conda-forge/geowombat-stac.svg)](https://anaconda.org/conda-forge/geowombat-stac) |
 | [![Conda Recipe](https://img.shields.io/badge/recipe-geowombat--tests-green.svg)](https://anaconda.org/conda-forge/geowombat-tests) | [![Conda Downloads](https://img.shields.io/conda/dn/conda-forge/geowombat-tests.svg)](https://anaconda.org/conda-forge/geowombat-tests) | [![Conda Version](https://img.shields.io/conda/vn/conda-forge/geowombat-tests.svg)](https://anaconda.org/conda-forge/geowombat-tests) | [![Conda Platforms](https://img.shields.io/conda/pn/conda-forge/geowombat-tests.svg)](https://anaconda.org/conda-forge/geowombat-tests) |
@@ -106,16 +105,16 @@ conda config --add channels conda-forge
 conda config --set channel_priority strict
 ```
 
-Once the `conda-forge` channel has been enabled, `geowombat, geowombat-coreg, geowombat-docs, geowombat-ml, geowombat-perf, geowombat-stac, geowombat-tests, geowombat-view, geowombat-web, geowombat-zarr` can be installed with `conda`:
+Once the `conda-forge` channel has been enabled, `geowombat, geowombat-coreg, geowombat-docs, geowombat-perf, geowombat-stac, geowombat-tests, geowombat-view, geowombat-web, geowombat-zarr` can be installed with `conda`:
 
 ```
-conda install geowombat geowombat-coreg geowombat-docs geowombat-ml geowombat-perf geowombat-stac geowombat-tests geowombat-view geowombat-web geowombat-zarr
+conda install geowombat geowombat-coreg geowombat-docs geowombat-perf geowombat-stac geowombat-tests geowombat-view geowombat-web geowombat-zarr
 ```
 
 or with `mamba`:
 
 ```
-mamba install geowombat geowombat-coreg geowombat-docs geowombat-ml geowombat-perf geowombat-stac geowombat-tests geowombat-view geowombat-web geowombat-zarr
+mamba install geowombat geowombat-coreg geowombat-docs geowombat-perf geowombat-stac geowombat-tests geowombat-view geowombat-web geowombat-zarr
 ```
 
 It is possible to list all of the versions of `geowombat` available on your platform with `conda`:
