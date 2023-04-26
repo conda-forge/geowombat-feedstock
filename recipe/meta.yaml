@@ -34,10 +34,6 @@ requirements:
     - pip
 
 
-
-
-
-
 outputs:
     - name: geowombat
       requirements:
@@ -120,6 +116,7 @@ outputs:
     - name: geowombat-perf
       requirements:
           - python 
+          - {{ pin_subpackage('geowombat', exact=True) }}
           - rtree
           - pygeos
           - netCDF4
