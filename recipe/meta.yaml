@@ -113,6 +113,67 @@ outputs:
           - pytest tests/test_write.py  # [not win]
           - pytest tests/test_xarray.py
           
+
+
+    - name: geowombat-coreg
+      requirements:
+        host:
+          - python
+        run:
+          - python 
+          - {{ pin_subpackage('geowombat', exact=True) }}
+          - earthpy
+          - pyfftw ==0.13.1
+          - bottleneck
+          - cartopy
+          - cmocean
+          - dill
+          - geoarray >=0.15.0
+          - geojson
+          - folium >=0.6.0,!=0.12.0
+          - pykrige
+          #- py_tools_ds >=0.18.0   
+      test:
+        imports:
+          - geowombat
+
+
+    - name: geowombat-docs
+      requirements:
+        host:
+          - python
+        run:
+          - python 
+          - {{ pin_subpackage('geowombat', exact=True) }}
+          - numpydoc
+          - sphinx
+          - sphinx-automodapi
+          - sphinxcontrib-bibtex <2.0.0
+          - sphinx_tabs
+          - pydata-sphinx-theme ==0.13.1
+          - sphinx-book-theme >=1.0.0
+          - sphinx-copybutton >=0.5.0
+          - sphinx-autodoc-typehints
+          - ipython
+          #- python-graphviz  
+      test:
+        imports:
+          - geowombat
+
+    - name: geowombat-ml
+      requirements:
+        host:
+          - python
+        run:
+          - python 
+          - {{ pin_subpackage('geowombat', exact=True) }}
+          - dask-ml >=2022.5.27
+          - lightgbm
+          #- sklearn-xarray @git+https://github.com/jgrss/sklearn-xarray.git  # 
+      test:
+        imports:
+          - geowombat
+
     - name: geowombat-perf
       requirements:
         host:
@@ -128,6 +189,79 @@ outputs:
       test:
         imports:
           - geowombat
+
+    - name: geowombat-stac
+      requirements:
+        host:
+          - python
+        run:
+          - python 
+          - {{ pin_subpackage('geowombat', exact=True) }}
+          - stackstac  
+          - pystac-client
+          - sat-search
+          - planetary-computer
+          - Rich
+          #- wget  
+        imports:
+          - geowombat
+
+
+    - name: geowombat-tests
+      requirements:
+        host:
+          - python
+        run:
+          - python 
+          - {{ pin_subpackage('geowombat', exact=True) }}
+          - testfixtures
+          - jax
+          - jaxlib
+          - pre-commit
+          - black
+          - flake8
+          - docformatter
+          #- isort  # 
+        imports:
+          - geowombat
+
+
+    - name: geowombat-view
+      requirements:
+        host:
+          - python
+        run:
+          - python 
+          - {{ pin_subpackage('geowombat', exact=True) }}
+          - bokeh
+          #- descartes  
+        imports:
+          - geowombat
+
+    - name: geowombat-view
+      requirements:
+        host:
+          - python
+        run:
+          - python 
+          - {{ pin_subpackage('geowombat', exact=True) }}
+          - gsutil
+          #- requests  
+        imports:
+          - geowombat
+
+    - name: geowombat-zarr
+      requirements:
+        host:
+          - python
+        run:
+          - python 
+          - {{ pin_subpackage('geowombat', exact=True) }}
+          - zarr
+          - numcodecs 
+        imports:
+          - geowombat
+
 about:
   home: https://github.com/jgrss/geowombat
   license: MIT
