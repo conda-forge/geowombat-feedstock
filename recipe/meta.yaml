@@ -203,6 +203,7 @@ outputs:
           - planetary-computer
           - Rich
           #- wget  
+      test:
         imports:
           - geowombat
 
@@ -222,6 +223,7 @@ outputs:
           - flake8
           - docformatter
           #- isort  # 
+      test:
         imports:
           - geowombat
 
@@ -235,6 +237,7 @@ outputs:
           - {{ pin_subpackage('geowombat', exact=True) }}
           - bokeh
           #- descartes  
+      test:
         imports:
           - geowombat
 
@@ -247,6 +250,7 @@ outputs:
           - {{ pin_subpackage('geowombat', exact=True) }}
           - gsutil
           #- requests  
+      test:
         imports:
           - geowombat
 
@@ -259,6 +263,7 @@ outputs:
           - {{ pin_subpackage('geowombat', exact=True) }}
           - gsutil
           - requests 
+      test:
         imports:
           - geowombat
 
@@ -272,6 +277,7 @@ outputs:
           - {{ pin_subpackage('geowombat', exact=True) }}
           - zarr
           - numcodecs 
+      test:
         imports:
           - geowombat
 
