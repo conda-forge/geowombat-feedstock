@@ -223,8 +223,9 @@ outputs:
           - python 
           - {{ pin_subpackage('geowombat', exact=True) }}
           - testfixtures
-          - jax  ### [not win]
-          - jaxlib  #### [not win]
+          # might need to drop jax and jaxlib for windows
+          - jax   
+          - jaxlib   
           - pre-commit
           - black
           - flake8
