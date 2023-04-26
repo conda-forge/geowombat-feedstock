@@ -167,7 +167,7 @@ outputs:
         run:
           - python 
           - {{ pin_subpackage('geowombat', exact=True) }}
-          - numba >=0.51.0
+          - numba #>=0.51.0
           - dask-ml #>=2022.5.27
           - lightgbm
           #- sklearn-xarray @git+https://github.com/jgrss/sklearn-xarray.git  # 
