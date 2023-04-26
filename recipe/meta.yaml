@@ -115,7 +115,11 @@ outputs:
           
     - name: geowombat-perf
       requirements:
+        host:
+          - python
+        run:
           - python 
+          # - geowombat
           - {{ pin_subpackage('geowombat', exact=True) }}
           - rtree
           - pygeos
