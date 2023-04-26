@@ -215,7 +215,7 @@ outputs:
           - geowombat
 
 
-    - name: geowombat-tests # [not win]
+    - name: geowombat-tests  # [not win]
       requirements:
         host:
           - python
