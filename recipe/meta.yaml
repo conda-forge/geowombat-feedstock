@@ -117,7 +117,9 @@ outputs:
           - pygeos
           - netCDF4
           - ray-default >=2.3.0  # [not osx] 
-
+      test:
+        imports:
+          - geowombat
 about:
   home: https://github.com/jgrss/geowombat
   license: MIT
