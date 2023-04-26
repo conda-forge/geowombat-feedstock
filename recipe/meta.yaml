@@ -215,7 +215,7 @@ outputs:
           - geowombat
 
 
-    - name: geowombat-tests  # [not win]
+    - name: geowombat-tests
       requirements:
         host:
           - python
@@ -224,8 +224,8 @@ outputs:
           - {{ pin_subpackage('geowombat', exact=True) }}
           - testfixtures
           # might need to drop jax and jaxlib for windows
-          - jax   
-          - jaxlib   
+          - jax  # [not win]   
+          - jaxlib  # [not win]   
           - pre-commit
           - black
           - flake8
