@@ -130,7 +130,7 @@ outputs:
           - folium >=0.6.0,!=0.12.0
           - pykrige
           - arosics
-          #- py_tools_ds >=0.18.0   
+          - py-tools-ds  
       test:
         imports:
           - geowombat
@@ -139,7 +139,7 @@ outputs:
         source_files:
           - tests
         commands:
-          - pytest tests/test_coreg.py
+          - pytest tests/test_coreg.py  # [not win] 
 
 
     - name: geowombat-docs
