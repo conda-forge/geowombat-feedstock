@@ -159,26 +159,26 @@ outputs:
         imports:
           - geowombat
 
-    # - name: geowombat-ml
-    #   requirements:
-    #     host:
-    #       - python
-    #     run:
-    #       - python 
-    #       - {{ pin_subpackage('geowombat', exact=True) }}
-    #       #- numba #>=0.51.0   just added as test can drop
-    #       #- dask-ml #>=2022.5.27  not sure we need this
-    #       - lightgbm
-    #       #- sklearn-xarray @git+https://github.com/jgrss/sklearn-xarray.git  # 
-    #   test:
-    #     imports:
-    #       - geowombat
-    #     requires:
-    #       - pytest
-    #     source_files:
-    #       - tests
-    #     commands:
-    #       - pytest tests/test_ml.py
+    - name: geowombat-ml
+      requirements:
+        host:
+          - python
+        run:
+          - python 
+          - {{ pin_subpackage('geowombat', exact=True) }}
+          #- numba #>=0.51.0   just added as test can drop
+          #- dask-ml #>=2022.5.27  not sure we need this
+          - lightgbm
+          - gw-sklearn-xarray  
+      test:
+        imports:
+          - geowombat
+        requires:
+          - pytest
+        source_files:
+          - tests
+        commands:
+          - pytest tests/test_ml.py
           
 
     - name: geowombat-perf
