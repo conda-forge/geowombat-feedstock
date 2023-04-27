@@ -92,8 +92,6 @@ outputs:
           #- pytest tests   #RUN ALL TESTS 
           - pytest tests/test_clip.py
           - pytest tests/test_config.py
-          # coreg requires 
-      #    - pytest tests/test_coreg.py
           - pytest tests/test_dask_cluster.py
           - pytest tests/test_extract.py
           - pytest tests/test_gdal.py
@@ -135,6 +133,12 @@ outputs:
       test:
         imports:
           - geowombat
+        requires:
+          - pytest
+        source_files:
+          - tests
+        commands:
+          - pytest tests/test_coreg.py
 
 
     - name: geowombat-docs
