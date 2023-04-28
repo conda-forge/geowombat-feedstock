@@ -10,7 +10,6 @@ source:
   sha256: aa32d8e83f956f45dbc6761bcdd9f9d46745587c8a843085dd8537538a4bd6ff  
     
 
-#skip py controls python version builds
 build:
   number: 0
   skip: true  # [py<37 or py>39]
@@ -158,7 +157,6 @@ outputs:
           - sphinx-copybutton >=0.5.0
           - sphinx-autodoc-typehints
           - ipython
-          #- python-graphviz  
       test:
         imports:
           - geowombat
@@ -191,7 +189,6 @@ outputs:
           - python
         run:
           - python 
-          # - geowombat
           - {{ pin_subpackage('geowombat', exact=True) }}
           - rtree
           - pygeos
@@ -213,13 +210,13 @@ outputs:
           - sat-search
           - planetary-computer
           - Rich
-          #- wget  
+          - wget  # [not win]  
       test:
         imports:
           - geowombat
 
 
-    - name: geowombat-tests
+    - name: geowombat-tests  # [not win] 
       requirements:
         host:
           - python
@@ -234,7 +231,7 @@ outputs:
           - black
           - flake8
           - docformatter
-          #- isort  # 
+          - isort   
       test:
         imports:
           - geowombat
@@ -248,7 +245,7 @@ outputs:
           - python 
           - {{ pin_subpackage('geowombat', exact=True) }}
           - bokeh
-          #- descartes  
+          - descartes  
       test:
         imports:
           - geowombat
@@ -261,7 +258,7 @@ outputs:
           - python 
           - {{ pin_subpackage('geowombat', exact=True) }}
           - gsutil
-          #- requests  
+          - requests  
       test:
         imports:
           - geowombat
