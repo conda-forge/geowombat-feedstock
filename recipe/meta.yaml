@@ -1,5 +1,5 @@
 {% set name = "geowombat" %}
-{% set version = "2.1.8" %}
+{% set version = "2.1.9" %}
 
 package:
   name: {{ name|lower }}
@@ -7,8 +7,8 @@ package:
 
 source:
   url: https://github.com/jgrss/{{ name }}/archive/v{{ version }}.tar.gz
-  sha256: aa32d8e83f956f45dbc6761bcdd9f9d46745587c8a843085dd8537538a4bd6ff  
-    
+  sha256: 94c8ac75bb9bffad01ba4756f5b8379fc191f0a3c9ed826ef1e8bfc1f4652f06
+
 
 #skip py controls python version builds
 build:
@@ -26,7 +26,7 @@ requirements:
     - numpy                                  # [build_platform != target_platform]
 
   host:
-    - python      
+    - python
     - setuptools >=59.5.0
     - wheel
     - cython >=0.29.0,<3.0.0
@@ -34,33 +34,33 @@ requirements:
     - pip
 
   run:
-  - {{ pin_compatible('python') }}
-  - python 
-  - dask-core >=2023.1.0
-  - distributed >=2023.1.0
-  - geopandas >=0.8.0
-  - joblib >=0.16.0
-  - matplotlib-base >=3.3.0
-  - pandas >=1.0.0
-  - pyproj >=3.0.0,<=3.4.0
-  - rasterio >=1.3.0,<2.0.0
-  - retry
-  - requests >=2.20.0
-  - scikit-learn >=0.23.0
-  - scipy >=1.5.0
-  - shapely >=1.7.0
-  - tqdm >=4.62.0
-  - xarray >=2023.1.0
-  - h5netcdf >=1.0.2
-  - cryptography >=38.0.0
-  - threadpoolctl >=3.1.0
-  - setuptools >=59.5.0
-  - cython >=0.29.0,<3.0.0
-  - jax  # [not win]
-  - ray-default  # [not osx]
+    - {{ pin_compatible('python') }}
+    - python
+    - dask-core >=2023.1.0
+    - distributed >=2023.1.0
+    - geopandas >=0.8.0
+    - joblib >=0.16.0
+    - matplotlib-base >=3.3.0
+    - pandas >=1.0.0
+    - pyproj >=3.0.0,<=3.4.0
+    - rasterio >=1.3.0,<2.0.0
+    - retry
+    - requests >=2.20.0
+    - scikit-learn >=0.23.0
+    - scipy >=1.5.0
+    - shapely >=1.7.0
+    - tqdm >=4.62.0
+    - xarray >=2023.1.0
+    - h5netcdf >=1.0.2
+    - cryptography >=38.0.0
+    - threadpoolctl >=3.1.0
+    - setuptools >=59.5.0
+    - cython >=0.29.0,<3.0.0
+    - jax # [not win]
+    - ray-default # [not osx]
  # - sklearn-xarray  
-  - testfixtures
-  - {{ pin_compatible('numpy') }}
+    - testfixtures
+    - {{ pin_compatible('numpy') }}
 
 
 
