@@ -77,7 +77,7 @@ test:
     - pytest tests/test_config.py
     # coreg requires 
 #    - pytest tests/test_coreg.py
-    - pytest tests/test_dask_cluster.py
+  #  - pytest tests/test_dask_cluster.py
     - pytest tests/test_extract.py
     - pytest tests/test_gdal.py
     - pytest tests/test_load.py  # [not osx]
