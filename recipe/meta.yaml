@@ -58,7 +58,7 @@ requirements:
     - cython >=0.29.0,<3.0.0
     - jax  # [not win]
     - ray-default  # [not osx]
- # - sklearn-xarray  
+    - gw-sklearn-xarray  
     - testfixtures
     - {{ pin_compatible('numpy') }}
 
