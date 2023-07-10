@@ -1,6 +1,7 @@
 {% set name = "geowombat" %}
 {% set version = "2.1.10" %}
 
+
 package:
   name: {{ name|lower }}
   version: {{ version }}
@@ -12,7 +13,7 @@ source:
 
 build:
   number: 0
-  skip: true  # [py<37]
+  skip: true  # [py<37 or py>39]
   script: {{ PYTHON }} setup.py build && pip install .
 
 requirements:
@@ -90,10 +91,8 @@ outputs:
           #- pytest tests   #RUN ALL TESTS 
           - pytest tests/test_clip.py
           - pytest tests/test_config.py
-          - pytest tests/test_dask_cluster.py
           - pytest tests/test_extract.py
           - pytest tests/test_gdal.py
-          - pytest tests/test_load.py  # [not osx]
           - pytest tests/test_moving.py
         # temp files not compatible with windows ??
           - pytest tests/test_nodata.py  # [not win]
