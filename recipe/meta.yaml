@@ -13,7 +13,7 @@ source:
 #skip py controls python version builds
 build:
   number: 0
-  skip: true  # [py<37]
+  skip: true  # [py<37 or py>310]
   script: {{ PYTHON }} setup.py build && pip install .
 
 requirements:
