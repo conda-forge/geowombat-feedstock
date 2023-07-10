@@ -1,5 +1,5 @@
 {% set name = "geowombat" %}
-{% set version = "2.1.9" %}
+{% set version = "2.1.10" %}
 
 package:
   name: {{ name|lower }}
@@ -7,13 +7,13 @@ package:
 
 source:
   url: https://github.com/jgrss/{{ name }}/archive/v{{ version }}.tar.gz
-  sha256: 94c8ac75bb9bffad01ba4756f5b8379fc191f0a3c9ed826ef1e8bfc1f4652f06
+  sha256: dc4af205837d79fb52b403770fe3637a637ee030d7ea26607bca3a6f70e8eddc
 
 
 #skip py controls python version builds
 build:
   number: 0
-  skip: true  # [py<37 or py>39]
+  skip: true  # [py<37 or py>310]
   script: {{ PYTHON }} setup.py build && pip install .
 
 requirements:
@@ -56,12 +56,11 @@ requirements:
     - threadpoolctl >=3.1.0
     - setuptools >=59.5.0
     - cython >=0.29.0,<3.0.0
-    - jax # [not win]
-    - ray-default # [not osx]
- # - sklearn-xarray  
+    - jax  # [not win]
+    - ray-default  # [not osx]
+    - gw-sklearn-xarray  
     - testfixtures
     - {{ pin_compatible('numpy') }}
-
 
 
 test:
@@ -77,10 +76,9 @@ test:
     - pytest tests/test_config.py
     # coreg requires 
 #    - pytest tests/test_coreg.py
-    - pytest tests/test_dask_cluster.py
     - pytest tests/test_extract.py
     - pytest tests/test_gdal.py
-    - pytest tests/test_load.py  # [not osx]
+    - pytest tests/test_ml.py
     - pytest tests/test_moving.py
    # temp files not compatible with windows ??
     - pytest tests/test_nodata.py  # [not win]
