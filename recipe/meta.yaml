@@ -60,7 +60,7 @@ requirements:
     - ray-default  # [not osx]
     - gw-sklearn-xarray  
     - testfixtures
-    - {{ pin_compatible('numpy') }}
+    - numpy >=1.19.0
 
 
 test:
