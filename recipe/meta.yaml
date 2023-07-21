@@ -148,7 +148,7 @@ outputs:
           #- pytest tests   #RUN ALL TESTS 
           - pytest tests/test_clip.py
           - pytest tests/test_config.py
-          # - pytest tests/test_conreg.py
+          - pytest tests/test_conreg.py
           - pytest tests/test_extract.py
           - pytest tests/test_gdal.py
           - pytest tests/test_moving.py
@@ -281,8 +281,8 @@ outputs:
           - python 
           - {{ pin_subpackage('geowombat', exact=True) }}
           - testfixtures
-          - jax   
-          - jaxlib  
+          - jax  # [not win]    
+          - jaxlib  # [not win]  
           - pre-commit
           - black
           - flake8
@@ -299,7 +299,7 @@ outputs:
         source_files:
           - tests
         commands:
-          - pytest tests/test_series.py    
+          - pytest tests/test_series.py  # [not win]     
 
 
     - name: geowombat-view
