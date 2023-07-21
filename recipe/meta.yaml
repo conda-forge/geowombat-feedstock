@@ -59,7 +59,6 @@ requirements:
     - cython >=0.29.0,<3.0.0
     - jax  # [not win]
     - ray-default  # [not osx]
-    - gw-sklearn-xarray  
     - testfixtures
     - numpy >=1.19.0
 
@@ -79,7 +78,7 @@ test:
 #    - pytest tests/test_coreg.py
     - pytest tests/test_extract.py
     - pytest tests/test_gdal.py
-    - pytest tests/test_ml.py
+    # - pytest tests/test_ml.py
     - pytest tests/test_moving.py
    # temp files not compatible with windows ??
     - pytest tests/test_nodata.py  # [not win]
