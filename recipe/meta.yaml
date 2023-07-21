@@ -87,7 +87,7 @@ test:
    # - pytest tests/test_rad.py  # [not py==38 or not py==39]
     - pytest tests/test_rasterio.py  # [not win]
     - pytest tests/test_scaling.py
-    - pytest tests/test_series.py  # [not win]
+    # - pytest tests/test_series.py  # [not win]  # only for test fixtures
     - pytest tests/test_sops.py
     - pytest tests/test_vi.py
     - pytest tests/test_write.py  # [not win]
@@ -282,9 +282,8 @@ outputs:
           - python 
           - {{ pin_subpackage('geowombat', exact=True) }}
           - testfixtures
-          # might need to drop jax and jaxlib for windows
-          - jax  # [not win]   
-          - jaxlib  # [not win]   
+          - jax   
+          - jaxlib  
           - pre-commit
           - black
           - flake8
@@ -293,6 +292,15 @@ outputs:
       test:
         imports:
           - geowombat
+      test:
+        imports:
+          - geowombat
+        requires:
+          - pytest
+        source_files:
+          - tests
+        commands:
+          - pytest tests/test_series.py    
 
 
     - name: geowombat-view
