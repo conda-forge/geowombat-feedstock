@@ -261,16 +261,18 @@ outputs:
           - geowombat
 
 
-    - name: geowombat-tests  # [not win] 
+    - name: geowombat-tests
       requirements:
+        build:
+          skip: True  # [not osx and py38 or not lnx and py38 or not win] 
         host:
           - python
         run:
           - python 
           - {{ pin_subpackage('geowombat', exact=True) }}
           - testfixtures
-          - jax  # [not win]    
-          - jaxlib  # [not win]  
+          - jax    
+          - jaxlib
           - pre-commit
           - black
           - flake8
@@ -287,7 +289,7 @@ outputs:
         source_files:
           - tests
         commands:
-          - pytest tests/test_series.py  # [not win]     
+          - pytest tests/test_series.py
 
 
     - name: geowombat-view
