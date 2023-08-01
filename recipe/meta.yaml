@@ -269,8 +269,8 @@ outputs:
           - python 
           - {{ pin_subpackage('geowombat', exact=True) }}
           - testfixtures
-          - jax    
-          - jaxlib
+          - jax  # [not win]
+          - jaxlib  # [not win]
           - pre-commit
           - black
           - flake8
@@ -287,7 +287,7 @@ outputs:
         source_files:
           - tests
         commands:
-          - pytest tests/test_series.py
+          - pytest tests/test_series.py  # [not win]
 
 
     - name: geowombat-view
