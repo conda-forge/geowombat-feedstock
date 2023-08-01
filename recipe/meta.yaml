@@ -264,7 +264,7 @@ outputs:
     - name: geowombat-tests
       requirements:
         build:
-          skip: True  # [not osx and py38 or not lnx and py38 or not win] 
+          skip: True  # [not osx and py==38 or not lnx and py==38 or not win] 
         host:
           - python
         run:
