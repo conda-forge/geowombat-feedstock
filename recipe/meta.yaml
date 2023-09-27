@@ -29,7 +29,7 @@ requirements:
     - setuptools >=59.5.0
     - wheel
     - cython >=0.29.0,<3.0.0
-    - numpy >=1.19.0
+    - numpy
     - pip
 
 
@@ -105,7 +105,7 @@ outputs:
           - setuptools >=59.5.0
           - wheel
           - cython >=0.29.0,<3.0.0
-          - numpy >=1.19.0
+          - numpy
           - pip
 
         run:
