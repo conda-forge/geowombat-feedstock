@@ -4,13 +4,7 @@ bot:
 build_platform:
   osx_arm64: osx_64
 build_with_mambabuild: true
-channels:
-  sources:
-  - conda-forge
-  - defaults
-  targets:
-  - - conda-forge
-    - main
+
 conda_build:
   pkg_format: '2'
 conda_forge_output_validation: true
@@ -18,3 +12,10 @@ github:
   branch_name: main
   tooling_branch_name: main
 test: native_and_emulated
+# channels:
+#   sources:
+#   - conda-forge
+#   - defaults
+#   targets:
+#   - - conda-forge
+#     - main 
