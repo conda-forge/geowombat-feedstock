@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://github.com/jgrss/{{ name }}/archive/v{{ version }}.tar.gz
-  sha256: 44485442a98030d513f73dbeb7a34fef81754fbd25ceffe1a53346be7787b27d
+  sha256: ef8f4b1e422e0fddf7237800a053f60b31d707709a6e4e11b2440c7903283dc7
 
 
 build:
