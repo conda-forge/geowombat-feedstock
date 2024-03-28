@@ -1,5 +1,5 @@
 {% set name = "geowombat" %}
-{% set version = "2.1.15" %}
+{% set version = "2.1.16" %}
  
 package:
   name: {{ name|lower }}
@@ -7,12 +7,11 @@ package:
 
 source:
   url: https://github.com/jgrss/{{ name }}/archive/v{{ version }}.tar.gz
-  sha256: ef8f4b1e422e0fddf7237800a053f60b31d707709a6e4e11b2440c7903283dc7
+  sha256: 4c9dd1af2292a65f4d2019f96fe1aff22ccb8bdd84938b3eca50b5956d285879
 
 
 build:
   number: 1
-
   skip: true  # [py<37 or py>310]
   script: {{ PYTHON }} setup.py build && pip install .
 
@@ -371,3 +370,4 @@ extra:
 # build local `python build-locally.py`
 # optional extras example https://github.com/conda-forge/ray-packages-feedstock/blob/main/recipe/meta.yaml
 #https://docs.conda.io/projects/conda-build/en/latest/resources/define-metadata.html?highlight=subpackages#implicit-metapackages
+# wget -qO- https://github.com/jgrss/geowombat/archive/refs/tags/v2.1.16.tar.gz | sha256sum
