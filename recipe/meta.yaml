@@ -11,8 +11,7 @@ source:
 
 
 build:
-  number: 0
-
+  number: 1
   skip: true  # [py<37 or py>310]
   script: {{ PYTHON }} setup.py build && pip install .
 
@@ -371,3 +370,4 @@ extra:
 # build local `python build-locally.py`
 # optional extras example https://github.com/conda-forge/ray-packages-feedstock/blob/main/recipe/meta.yaml
 #https://docs.conda.io/projects/conda-build/en/latest/resources/define-metadata.html?highlight=subpackages#implicit-metapackages
+# wget -qO- https://github.com/jgrss/geowombat/archive/refs/tags/v2.1.16.tar.gz | sha256sum
