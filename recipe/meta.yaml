@@ -222,7 +222,7 @@ outputs:
         run:
           - python 
           - {{ pin_subpackage('geowombat', exact=True) }}
-          #- numba #>=0.51.0   just added as test can drop
+          - scikit-learn =1.2.0
           - lightgbm
           - gw-sklearn-xarray  
       test:
