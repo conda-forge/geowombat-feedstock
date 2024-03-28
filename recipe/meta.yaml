@@ -11,7 +11,7 @@ source:
 
 
 build:
-  number: 0
+  number: 1
 
   skip: true  # [py<37 or py>310]
   script: {{ PYTHON }} setup.py build && pip install .
@@ -221,8 +221,8 @@ outputs:
           - python
         run:
           - python 
-          - {{ pin_subpackage('geowombat', exact=True) }}
-          #- numba #>=0.51.0   just added as test can drop
+          - {{ pin_subpackage('geowombat') }}
+          - scikit-learn =1.2.0
           - lightgbm
           - gw-sklearn-xarray  
       test:
