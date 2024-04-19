@@ -17,5 +17,5 @@ def get_sha256_checksum(url):
 
 
 if __name__ == "__main__":
-    url = "https://github.com/jgrss/geowombat/archive/refs/tags/v2.1.15.tar.gz"
+    url = "https://github.com/jgrss/geowombat/archive/refs/tags/v2.1.17.tar.gz"
     print(get_sha256_checksum(url))
