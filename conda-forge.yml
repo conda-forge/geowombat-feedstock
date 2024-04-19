@@ -3,7 +3,7 @@ bot:
   inspection: hint-all
 build_platform:
   osx_arm64: osx_64
-build_with_mambabuild: true
+conda_build_tool: mambabuild
 
 conda_build:
   pkg_format: '2'
