@@ -232,7 +232,7 @@ outputs:
         source_files:
           - tests
         commands:
-          - pytest tests/test_ml.py
+          - pytest tests/ml_test.py
           
 
     - name: geowombat-perf
