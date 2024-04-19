@@ -4,7 +4,7 @@
 # Please do not modify
 
 # Ignore all files and folders in root
-*
+
 !/conda-forge.yml
 
 # Don't ignore any files/folders if the parent folder is 'un-ignored'
