@@ -1,13 +1,13 @@
 {% set name = "geowombat" %}
-{% set version = "2.1.16" %}
- 
+{% set version = "2.1.17" %}
+
 package:
   name: {{ name|lower }}
   version: {{ version }}
 
 source:
   url: https://github.com/jgrss/{{ name }}/archive/v{{ version }}.tar.gz
-  sha256: 4c9dd1af2292a65f4d2019f96fe1aff22ccb8bdd84938b3eca50b5956d285879
+  sha256: efa188b3884a0321ba0396a5408035225f1e8514e29befa9b149d5feb06a167b
 
 
 build:
@@ -232,7 +232,7 @@ outputs:
         source_files:
           - tests
         commands:
-          - pytest tests/test_ml.py
+          - pytest tests/ml_test.py
           
 
     - name: geowombat-perf
