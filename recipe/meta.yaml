@@ -9,9 +9,9 @@ source:
   url: https://github.com/jgrss/{{ name }}/archive/v{{ version }}.tar.gz
   sha256: efa188b3884a0321ba0396a5408035225f1e8514e29befa9b149d5feb06a167b
 
-build:
-  number: 0
 
+build:
+  number: 1
   skip: true  # [py<37 or py>310]
   script: {{ PYTHON }} setup.py build && pip install .
 
@@ -41,7 +41,7 @@ requirements:
     - joblib >=0.16.0
     - matplotlib-base >=3.3.0
     - pandas >=1.0.0
-    - pyproj >=3.0.0,<=3.4.0
+    - pyproj >=3.0.0,<3.5.0
     - rasterio >=1.3.0,<2.0.0
     - retry
     - requests >=2.20.0
@@ -220,8 +220,8 @@ outputs:
           - python
         run:
           - python 
-          - {{ pin_subpackage('geowombat', exact=True) }}
-          #- numba #>=0.51.0   just added as test can drop
+          - {{ pin_subpackage('geowombat') }}
+          - scikit-learn =1.2.0
           - lightgbm
           - gw-sklearn-xarray  
       test:
@@ -370,3 +370,4 @@ extra:
 # build local `python build-locally.py`
 # optional extras example https://github.com/conda-forge/ray-packages-feedstock/blob/main/recipe/meta.yaml
 #https://docs.conda.io/projects/conda-build/en/latest/resources/define-metadata.html?highlight=subpackages#implicit-metapackages
+# wget -qO- https://github.com/jgrss/geowombat/archive/refs/tags/v2.1.16.tar.gz | sha256sum
