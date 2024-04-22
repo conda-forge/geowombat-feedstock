@@ -1,48 +1,48 @@
-name: Update Feedstock and Release
+# name: Update Feedstock and Release
 
-on:
-  schedule:
-    - cron: '0 0 * * *'  # Runs every day at midnight
-  workflow_dispatch:
+# on:
+#   schedule:
+#     - cron: '0 0 * * *'  # Runs every day at midnight
+#   workflow_dispatch:
 
-jobs:
-  update-feedstock:
-    runs-on: ubuntu-latest
-    steps:
-      - name: Checkout feedstock
-        uses: actions/checkout@v3
-        with:
-          repository: conda-forge/geowombat-feedstock
-          ref: main
+# jobs:
+#   update-feedstock:
+#     runs-on: ubuntu-latest
+#     steps:
+#       - name: Checkout feedstock
+#         uses: actions/checkout@v3
+#         with:
+#           repository: conda-forge/geowombat-feedstock
+#           ref: main
 
-      - name: Setup Conda
-        uses: conda-incubator/setup-miniconda@v2
-        with:
-          activate-environment: myenv
-          environment-file: environment.yml
-          python-version: 3.9
-          auto-activate-base: false
+#       - name: Setup Conda
+#         uses: conda-incubator/setup-miniconda@v2
+#         with:
+#           activate-environment: myenv
+#           environment-file: environment.yml
+#           python-version: 3.9
+#           auto-activate-base: false
 
-      - name: Check for new release
-        id: check-release
-        uses: anothrNick/github-tag-action@1.35.0
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+#       - name: Check for new release
+#         id: check-release
+#         uses: anothrNick/github-tag-action@1.35.0
+#         env:
+#           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
-      - name: Update meta.yaml
-        if: steps.check-release.outputs.new_tag
-        run: |
-          new_version=${{ steps.check-release.outputs.new_tag }}
-          sed -i "s/version: .*/version: $new_version/" recipe/meta.yaml
-          new_sha=$(wget -qO- https://github.com/jgrss/geowombat/archive/refs/tags/$new_version.tar.gz | sha256sum | cut -d' ' -f1)
-          sed -i "s/sha256: .*/sha256: $new_sha/" recipe/meta.yaml
+#       - name: Update meta.yaml
+#         if: steps.check-release.outputs.new_tag
+#         run: |
+#           new_version=${{ steps.check-release.outputs.new_tag }}
+#           sed -i "s/version: .*/version: $new_version/" recipe/meta.yaml
+#           new_sha=$(wget -qO- https://github.com/jgrss/geowombat/archive/refs/tags/$new_version.tar.gz | sha256sum | cut -d' ' -f1)
+#           sed -i "s/sha256: .*/sha256: $new_sha/" recipe/meta.yaml
 
-      - name: Create Pull Request
-        if: steps.check-release.outputs.new_tag
-        uses: peter-evans/create-pull-request@v4
-        with:
-          commit-message: "Update to ${{ steps.check-release.outputs.new_tag }}"
-          title: "Update geowombat to ${{ steps.check-release.outputs.new_tag }}"
-          body: "This PR updates geowombat to the new release version ${{ steps.check-release.outputs.new_tag }}."
-          branch: "update-${{ steps.check-release.outputs.new_tag }}"
-          delete-branch: true
+#       - name: Create Pull Request
+#         if: steps.check-release.outputs.new_tag
+#         uses: peter-evans/create-pull-request@v4
+#         with:
+#           commit-message: "Update to ${{ steps.check-release.outputs.new_tag }}"
+#           title: "Update geowombat to ${{ steps.check-release.outputs.new_tag }}"
+#           body: "This PR updates geowombat to the new release version ${{ steps.check-release.outputs.new_tag }}."
+#           branch: "update-${{ steps.check-release.outputs.new_tag }}"
+#           delete-branch: true
