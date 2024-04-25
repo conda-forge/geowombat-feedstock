@@ -1,54 +1,55 @@
-name: Update Geowombat Feedstock
+# not allowed to run on conda-forge
+# name: Update Geowombat Feedstock
 
-# Triggers define when the action should run. This includes a scheduled trigger and a manual trigger option.
-on:
-  schedule:
-    - cron: '0 0 * * *'  # Runs every day at midnight UTC to regularly check for new releases.
-  workflow_dispatch:  # Allows manual triggering of the workflow from the GitHub interface.
+# # Triggers define when the action should run. This includes a scheduled trigger and a manual trigger option.
+# on:
+#   schedule:
+#     - cron: '0 0 * * *'  # Runs every day at midnight UTC to regularly check for new releases.
+#   workflow_dispatch:  # Allows manual triggering of the workflow from the GitHub interface.
 
-jobs:
-  check-new-release:
-    runs-on: ubuntu-latest  # Specifies the type of virtual machine to run the job on, here using the latest Ubuntu.
+# jobs:
+#   check-new-release:
+#     runs-on: ubuntu-latest  # Specifies the type of virtual machine to run the job on, here using the latest Ubuntu.
 
-    steps:
-      - name: Checkout feedstock
-        uses: actions/checkout@v3  # Checks out the conda-forge/geowombat-feedstock repository so it can be used by the action.
-        with:
-          repository: conda-forge/geowombat-feedstock
-          ref: main  # Targets the main branch of the repository.
+#     steps:
+#       - name: Checkout feedstock
+#         uses: actions/checkout@v3  # Checks out the conda-forge/geowombat-feedstock repository so it can be used by the action.
+#         with:
+#           repository: conda-forge/geowombat-feedstock
+#           ref: main  # Targets the main branch of the repository.
 
-      - name: Setup Python
-        uses: actions/setup-python@v2  # Sets up a Python environment which might be necessary for scripts that require Python.
-        with:
-          python-version: '3.x'  # Specifies the Python version to setup.
+#       - name: Setup Python
+#         uses: actions/setup-python@v2  # Sets up a Python environment which might be necessary for scripts that require Python.
+#         with:
+#           python-version: '3.x'  # Specifies the Python version to setup.
 
-      - name: Check for new release
-        id: check-release
-        uses: anothrNick/github-tag-action@1.35.0  # Uses a third-party action to check for new tags in the geowombat repository.
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}  # The GitHub Token to authenticate API requests.
+#       - name: Check for new release
+#         id: check-release
+#         uses: anothrNick/github-tag-action@1.35.0  # Uses a third-party action to check for new tags in the geowombat repository.
+#         env:
+#           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}  # The GitHub Token to authenticate API requests.
 
-      - name: Update meta.yaml
-        if: steps.check-release.outputs.new_tag  # Conditional step that only runs if a new tag/release is found.
-        run: |
-          new_version=${{ steps.check-release.outputs.new_tag }}
-          new_version=${new_version#"v"}  # Remove 'v' prefix if present to match the version format in meta.yaml.
-          echo "New Version: $new_version"
-          sed -i "s/version = \".*\"/version = \"$new_version\"/" recipe/meta.yaml  # Updates the version in meta.yaml.
-          new_sha=$(wget -qO- https://github.com/jgrss/geowombat/archive/refs/tags/v$new_version.tar.gz | sha256sum | cut -d' ' -f1)
-          echo "New SHA256: $new_sha"
-          sed -i "s/sha256: .*/sha256: $new_sha/" recipe/meta.yaml  # Updates the SHA256 checksum in meta.yaml.
-        shell: bash  # Specifies the shell to use for running the script.
+#       - name: Update meta.yaml
+#         if: steps.check-release.outputs.new_tag  # Conditional step that only runs if a new tag/release is found.
+#         run: |
+#           new_version=${{ steps.check-release.outputs.new_tag }}
+#           new_version=${new_version#"v"}  # Remove 'v' prefix if present to match the version format in meta.yaml.
+#           echo "New Version: $new_version"
+#           sed -i "s/version = \".*\"/version = \"$new_version\"/" recipe/meta.yaml  # Updates the version in meta.yaml.
+#           new_sha=$(wget -qO- https://github.com/jgrss/geowombat/archive/refs/tags/v$new_version.tar.gz | sha256sum | cut -d' ' -f1)
+#           echo "New SHA256: $new_sha"
+#           sed -i "s/sha256: .*/sha256: $new_sha/" recipe/meta.yaml  # Updates the SHA256 checksum in meta.yaml.
+#         shell: bash  # Specifies the shell to use for running the script.
 
-      - name: Create Pull Request
-        if: steps.check-release.outputs.new_tag  # Conditional step that only runs if a new tag/release is found.
-        uses: peter-evans/create-pull-request@v4  # Uses a GitHub Action to create a pull request with the updated meta.yaml.
-        with:
-          token: ${{ secrets.GITHUB_TOKEN }}  # GitHub Token to authenticate the request.
-          commit-message: "Update to $new_version"  # Custom commit message for the pull request.
-          title: "Update geowombat to $new_version"  # Title of the pull request.
-          body: "This PR updates geowombat to the new release version $new_version."  # Content of the pull request body.
-          branch: "update-to-$new_version"  # Specifies the branch name for the changes.
-          base: "main"  # Specifies the branch to merge the pull request into.
-          delete-branch: true  # Option to delete the branch after the pull request is merged.
+#       - name: Create Pull Request
+#         if: steps.check-release.outputs.new_tag  # Conditional step that only runs if a new tag/release is found.
+#         uses: peter-evans/create-pull-request@v4  # Uses a GitHub Action to create a pull request with the updated meta.yaml.
+#         with:
+#           token: ${{ secrets.GITHUB_TOKEN }}  # GitHub Token to authenticate the request.
+#           commit-message: "Update to $new_version"  # Custom commit message for the pull request.
+#           title: "Update geowombat to $new_version"  # Title of the pull request.
+#           body: "This PR updates geowombat to the new release version $new_version."  # Content of the pull request body.
+#           branch: "update-to-$new_version"  # Specifies the branch name for the changes.
+#           base: "main"  # Specifies the branch to merge the pull request into.
+#           delete-branch: true  # Option to delete the branch after the pull request is merged.
 
