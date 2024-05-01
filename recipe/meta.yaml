@@ -14,7 +14,7 @@ source:
 
 build:
   number: 1
-  skip: true  # [py<37 or py>310]
+  skip: true  # [py<37 or py>311]
   script: {{ PYTHON }} setup.py build && pip install .
 
 requirements:
