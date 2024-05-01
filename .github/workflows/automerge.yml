@@ -1,3 +1,4 @@
+# merges requests if passes tests
 on:
   status: {}
   check_suite:
