@@ -28,7 +28,8 @@ requirements:
     - cython >=0.29.0,<3.0.0                 # [build_platform != target_platform]
     - numpy                                  # [build_platform != target_platform]
     - {{ compiler('c') }}
-
+    - {{ stdlib("c") }}
+  
   host:
     - python      
     - setuptools >=59.5.0
