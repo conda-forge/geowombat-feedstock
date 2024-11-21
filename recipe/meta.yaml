@@ -1,9 +1,6 @@
 {% set name = "geowombat" %}
 {% set version = "2.1.22" %}
 
-{% set version = "2.1.22" %}
-
-
 package:
   name: {{ name|lower }}
   version: {{ version }}
@@ -216,9 +213,6 @@ outputs:
       test:
         imports:
           - geowombat
-      test:
-        imports:
-          - geowombat
         requires:
           - pytest
         source_files:
@@ -235,12 +229,14 @@ outputs:
           - python 
           - {{ pin_subpackage('geowombat', exact=True) }}
           - bokeh
-          - descartes  
+          - descartes
+          - ipython
+          - graphviz  
       test:
         imports:
           - geowombat
 
-    - name: geowombat-view
+    - name: geowombat-web
       requirements:
         host:
           - python
@@ -248,7 +244,8 @@ outputs:
           - python 
           - {{ pin_subpackage('geowombat', exact=True) }}
           - gsutil
-          - requests  
+          - requests
+          - wget  # [not win]   
       test:
         imports:
           - geowombat
