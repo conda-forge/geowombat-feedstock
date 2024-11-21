@@ -368,6 +368,8 @@ extra:
     - mmann1123
 
 # notes:
+# conda smithy rerender
+# conda build recipe/  
 # build in mamba  https://conda-forge.org/docs/maintainer/maintainer_faq.html#mfaq-mamba-local
 # build local `python build-locally.py`
 # optional extras example https://github.com/conda-forge/ray-packages-feedstock/blob/main/recipe/meta.yaml
