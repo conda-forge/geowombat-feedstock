@@ -47,7 +47,7 @@ requirements:
     - requests >=2.20.0
     - scikit-learn >=0.23.0
     - scipy >=1.5.0
-    - shapely >=1.7.0
+    - shapely <2.0
     - tqdm >=4.62.0
     - xarray >=2023.1.0
     - h5netcdf >=1.0.2
@@ -128,7 +128,6 @@ outputs:
         run:
           - python 
           - geowombat
-          # - {{ pin_compatible('geowombat', exact=True) }}
           - numpydoc
           - sphinx
           - sphinx-automodapi
@@ -150,7 +149,6 @@ outputs:
         run:
           - python 
           - geowombat
-          # - {{ pin_compatible('geowombat') }}
           - scikit-learn
           - lightgbm
           - gw-sklearn-xarray  
@@ -172,7 +170,6 @@ outputs:
         run:
           - python 
           - geowombat
-          # - {{ pin_compatible('geowombat', exact=True) }}
           - rtree
           - pygeos
           - netCDF4
@@ -188,7 +185,6 @@ outputs:
         run:
           - python 
           - geowombat
-          # - {{ pin_compatible('geowombat', exact=True) }}
           - stackstac  
           - pystac-client
           - sat-search
@@ -207,7 +203,6 @@ outputs:
         run:
           - python 
           - geowombat
-          # - {{ pin_compatible('geowombat', exact=True) }}
           - testfixtures
           - jax  # [not win]
           - jaxlib  # [not win]
@@ -234,7 +229,6 @@ outputs:
         run:
           - python 
           - geowombat
-          # - {{ pin_compatible('geowombat', exact=True) }}
           - bokeh
           - descartes
           - ipython
@@ -250,7 +244,6 @@ outputs:
         run:
           - python 
           - geowombat
-          # - {{ pin_compatible('geowombat', exact=True) }}
           - gsutil
           - requests
           - wget  # [not win]   
@@ -265,9 +258,8 @@ outputs:
         run:
           - python 
           - geowombat
-          # - {{ pin_compatible('geowombat', exact=True) }}
           - zarr
-          - numcodecs  # [osx and arm64]
+          - numcodecs
       test:
         imports:
           - geowombat
