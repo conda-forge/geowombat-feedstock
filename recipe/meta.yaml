@@ -263,6 +263,8 @@ outputs:
       test:
         imports:
           - geowombat
+      build:
+        skip: true  # [py==39]
 
 about:
   home: https://github.com/jgrss/geowombat
