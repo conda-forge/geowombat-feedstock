@@ -267,7 +267,7 @@ outputs:
           - geowombat
           # - {{ pin_compatible('geowombat', exact=True) }}
           - zarr
-          - numcodecs 
+          - numcodecs  # [osx and arm64]
       test:
         imports:
           - geowombat
