@@ -89,182 +89,182 @@ test:
       - pytest tests/test_write.py  # [not win]
       - pytest tests/test_xarray.py
 
-outputs:
-    - name: geowombat-coreg
-      requirements:
-        host:
-          - python
-        run:
-          - python 
-          - geowombat
-          # - {{ pin_compatible('geowombat', exact=True) }}
-          - earthpy
-          - pyfftw ==0.13.1
-          - bottleneck
-          - cartopy
-          - cmocean
-          - dill
-          - geoarray >=0.15.0
-          - geojson
-          - folium >=0.6.0,!=0.12.0
-          - pykrige
-          - arosics
-          - py-tools-ds  
-      test:
-        imports:
-          - geowombat
-        requires:
-          - pytest
-        source_files:
-          - tests
-        commands:
-          - pytest tests/test_coreg.py  # [not win] 
+# outputs:
+#     - name: geowombat-coreg
+#       requirements:
+#         host:
+#           - python
+#         run:
+#           - python 
+#           - geowombat
+#           # - {{ pin_compatible('geowombat', exact=True) }}
+#           - earthpy
+#           - pyfftw ==0.13.1
+#           - bottleneck
+#           - cartopy
+#           - cmocean
+#           - dill
+#           - geoarray >=0.15.0
+#           - geojson
+#           - folium >=0.6.0,!=0.12.0
+#           - pykrige
+#           - arosics
+#           - py-tools-ds  
+#       test:
+#         imports:
+#           - geowombat
+#         requires:
+#           - pytest
+#         source_files:
+#           - tests
+#         commands:
+#           - pytest tests/test_coreg.py  # [not win] 
 
 
-    - name: geowombat-docs
-      requirements:
-        host:
-          - python
-        run:
-          - python 
-          - geowombat
-          - numpydoc
-          - sphinx
-          - sphinx-automodapi
-          - sphinxcontrib-bibtex <2.0.0
-          #- sphinx_tabs
-          - pydata-sphinx-theme ==0.13.1
-          - sphinx-book-theme >=1.0.0
-          - sphinx-copybutton >=0.5.0
-          - sphinx-autodoc-typehints
-          - ipython
-      test:
-        imports:
-          - geowombat
+#     - name: geowombat-docs
+#       requirements:
+#         host:
+#           - python
+#         run:
+#           - python 
+#           - geowombat
+#           - numpydoc
+#           - sphinx
+#           - sphinx-automodapi
+#           - sphinxcontrib-bibtex <2.0.0
+#           #- sphinx_tabs
+#           - pydata-sphinx-theme ==0.13.1
+#           - sphinx-book-theme >=1.0.0
+#           - sphinx-copybutton >=0.5.0
+#           - sphinx-autodoc-typehints
+#           - ipython
+#       test:
+#         imports:
+#           - geowombat
 
-    - name: geowombat-ml
-      requirements:
-        host:
-          - python
-        run:
-          - python 
-          - geowombat
-          - scikit-learn
-          - lightgbm
-          - gw-sklearn-xarray  
-      test:
-        imports:
-          - geowombat
-        requires:
-          - pytest
-        source_files:
-          - tests
-        commands:
-          - pytest tests/ml_test.py
+#     - name: geowombat-ml
+#       requirements:
+#         host:
+#           - python
+#         run:
+#           - python 
+#           - geowombat
+#           - scikit-learn
+#           - lightgbm
+#           - gw-sklearn-xarray  
+#       test:
+#         imports:
+#           - geowombat
+#         requires:
+#           - pytest
+#         source_files:
+#           - tests
+#         commands:
+#           - pytest tests/ml_test.py
           
 
-    - name: geowombat-perf
-      requirements:
-        host:
-          - python
-        run:
-          - python 
-          - geowombat
-          - rtree
-          - pygeos
-          - netCDF4
-          - ray-default >=2.3.0  # [not osx] 
-      test:
-        imports:
-          - geowombat
+#     - name: geowombat-perf
+#       requirements:
+#         host:
+#           - python
+#         run:
+#           - python 
+#           - geowombat
+#           - rtree
+#           - pygeos
+#           - netCDF4
+#           - ray-default >=2.3.0  # [not osx] 
+#       test:
+#         imports:
+#           - geowombat
 
-    - name: geowombat-stac
-      requirements:
-        host:
-          - python
-        run:
-          - python 
-          - geowombat
-          - stackstac  
-          - pystac-client
-          - sat-search
-          - planetary-computer
-          - Rich
-          - wget  # [not win]  
-      test:
-        imports:
-          - geowombat
-
-
-    - name: geowombat-tests  # [not osx and py==38 or not lnx and py==38 or not win] 
-      requirements:
-        host:
-          - python
-        run:
-          - python 
-          - geowombat
-          - testfixtures
-          - jax  # [not win]
-          - jaxlib  # [not win]
-          - pre-commit
-          - black
-          - flake8
-          - docformatter
-          - isort   
-      test:
-        imports:
-          - geowombat
-        requires:
-          - pytest
-        source_files:
-          - tests
-        commands:
-          - pytest tests/test_series.py  # [not win]
+#     - name: geowombat-stac
+#       requirements:
+#         host:
+#           - python
+#         run:
+#           - python 
+#           - geowombat
+#           - stackstac  
+#           - pystac-client
+#           - sat-search
+#           - planetary-computer
+#           - Rich
+#           - wget  # [not win]  
+#       test:
+#         imports:
+#           - geowombat
 
 
-    - name: geowombat-view
-      requirements:
-        host:
-          - python
-        run:
-          - python 
-          - geowombat
-          - bokeh
-          - descartes
-          - ipython
-          - graphviz  
-      test:
-        imports:
-          - geowombat
+#     - name: geowombat-tests  # [not osx and py==38 or not lnx and py==38 or not win] 
+#       requirements:
+#         host:
+#           - python
+#         run:
+#           - python 
+#           - geowombat
+#           - testfixtures
+#           - jax  # [not win]
+#           - jaxlib  # [not win]
+#           - pre-commit
+#           - black
+#           - flake8
+#           - docformatter
+#           - isort   
+#       test:
+#         imports:
+#           - geowombat
+#         requires:
+#           - pytest
+#         source_files:
+#           - tests
+#         commands:
+#           - pytest tests/test_series.py  # [not win]
 
-    - name: geowombat-web
-      requirements:
-        host:
-          - python
-        run:
-          - python 
-          - geowombat
-          - gsutil
-          - requests
-          - wget  # [not win]   
-      test:
-        imports:
-          - geowombat
 
-    - name: geowombat-zarr
-      requirements:
-        host:
-          - python
-        run:
-          - python 
-          - geowombat
-          - zarr
-          - numcodecs
-      test:
-        imports:
-          - geowombat
-      build:
-        skip: true  # [py==39]
+#     - name: geowombat-view
+#       requirements:
+#         host:
+#           - python
+#         run:
+#           - python 
+#           - geowombat
+#           - bokeh
+#           - descartes
+#           - ipython
+#           - graphviz  
+#       test:
+#         imports:
+#           - geowombat
+
+#     - name: geowombat-web
+#       requirements:
+#         host:
+#           - python
+#         run:
+#           - python 
+#           - geowombat
+#           - gsutil
+#           - requests
+#           - wget  # [not win]   
+#       test:
+#         imports:
+#           - geowombat
+
+#     - name: geowombat-zarr
+#       requirements:
+#         host:
+#           - python
+#         run:
+#           - python 
+#           - geowombat
+#           - zarr
+#           - numcodecs
+#       test:
+#         imports:
+#           - geowombat
+#       build:
+#         skip: true  # [py==39]
 
 about:
   home: https://github.com/jgrss/geowombat
