@@ -12,10 +12,6 @@ source:
   url: https://github.com/jgrss/{{ name }}/archive/v{{ version }}.tar.gz
   sha256: 5986aab2a88facc9751852f24f59ffce95e242090f008170da6b54c1712ab965
 
-  sha256: 5986aab2a88facc9751852f24f59ffce95e242090f008170da6b54c1712ab965
-
-
-
 build:
   number: 2
   skip: true  # [py<37 or py>311]
