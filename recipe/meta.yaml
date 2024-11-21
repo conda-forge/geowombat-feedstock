@@ -96,7 +96,8 @@ outputs:
           - python
         run:
           - python 
-          - {{ pin_compatible('geowombat', exact=True) }}
+          - geowombat
+          # - {{ pin_compatible('geowombat', exact=True) }}
           - earthpy
           - pyfftw ==0.13.1
           - bottleneck
@@ -126,7 +127,8 @@ outputs:
           - python
         run:
           - python 
-          - {{ pin_compatible('geowombat', exact=True) }}
+          - geowombat
+          # - {{ pin_compatible('geowombat', exact=True) }}
           - numpydoc
           - sphinx
           - sphinx-automodapi
@@ -147,7 +149,8 @@ outputs:
           - python
         run:
           - python 
-          - {{ pin_compatible('geowombat') }}
+          - geowombat
+          # - {{ pin_compatible('geowombat') }}
           - scikit-learn
           - lightgbm
           - gw-sklearn-xarray  
@@ -168,7 +171,8 @@ outputs:
           - python
         run:
           - python 
-          - {{ pin_compatible('geowombat', exact=True) }}
+          - geowombat
+          # - {{ pin_compatible('geowombat', exact=True) }}
           - rtree
           - pygeos
           - netCDF4
@@ -183,7 +187,8 @@ outputs:
           - python
         run:
           - python 
-          - {{ pin_compatible('geowombat', exact=True) }}
+          - geowombat
+          # - {{ pin_compatible('geowombat', exact=True) }}
           - stackstac  
           - pystac-client
           - sat-search
@@ -201,7 +206,8 @@ outputs:
           - python
         run:
           - python 
-          - {{ pin_compatible('geowombat', exact=True) }}
+          - geowombat
+          # - {{ pin_compatible('geowombat', exact=True) }}
           - testfixtures
           - jax  # [not win]
           - jaxlib  # [not win]
@@ -227,7 +233,8 @@ outputs:
           - python
         run:
           - python 
-          - {{ pin_compatible('geowombat', exact=True) }}
+          - geowombat
+          # - {{ pin_compatible('geowombat', exact=True) }}
           - bokeh
           - descartes
           - ipython
@@ -242,7 +249,8 @@ outputs:
           - python
         run:
           - python 
-          - {{ pin_compatible('geowombat', exact=True) }}
+          - geowombat
+          # - {{ pin_compatible('geowombat', exact=True) }}
           - gsutil
           - requests
           - wget  # [not win]   
@@ -256,7 +264,8 @@ outputs:
           - python
         run:
           - python 
-          - {{ pin_compatible('geowombat', exact=True) }}
+          - geowombat
+          # - {{ pin_compatible('geowombat', exact=True) }}
           - zarr
           - numcodecs 
       test:
