@@ -250,20 +250,6 @@ outputs:
         imports:
           - geowombat
 
-    - name: geowombat-web
-      requirements:
-        host:
-          - python
-        run:
-          - python 
-          - {{ pin_subpackage('geowombat', exact=True) }}
-          - gsutil
-          - requests 
-      test:
-        imports:
-          - geowombat
-
-
     - name: geowombat-zarr
       requirements:
         host:
