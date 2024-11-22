@@ -178,48 +178,48 @@ outputs:
         imports:
           - geowombat
 
-#     - name: geowombat-stac
-#       requirements:
-#         host:
-#           - python
-#         run:
-#           - python 
-#           - geowombat
-#           - stackstac  
-#           - pystac-client
-#           - sat-search
-#           - planetary-computer
-#           - Rich
-#           - wget  # [not win]  
-#       test:
-#         imports:
-#           - geowombat
+    - name: geowombat-stac
+      requirements:
+        host:
+          - python
+        run:
+          - python 
+          - geowombat
+          - stackstac  
+          - pystac-client
+          - sat-search
+          - planetary-computer
+          - Rich
+          - wget  # [not win]  
+      test:
+        imports:
+          - geowombat
 
 
-#     - name: geowombat-tests  # [not osx and py==38 or not lnx and py==38 or not win] 
-#       requirements:
-#         host:
-#           - python
-#         run:
-#           - python 
-#           - geowombat
-#           - testfixtures
-#           - jax  # [not win]
-#           - jaxlib  # [not win]
-#           - pre-commit
-#           - black
-#           - flake8
-#           - docformatter
-#           - isort   
-#       test:
-#         imports:
-#           - geowombat
-#         requires:
-#           - pytest
-#         source_files:
-#           - tests
-#         commands:
-#           - pytest tests/test_series.py  # [not win]
+    - name: geowombat-tests  # [not osx and py==38 or not lnx and py==38 or not win] 
+      requirements:
+        host:
+          - python
+        run:
+          - python 
+          - geowombat
+          - testfixtures
+          - jax  # [not win]
+          - jaxlib  # [not win]
+          - pre-commit
+          - black
+          - flake8
+          - docformatter
+          - isort   
+      test:
+        imports:
+          - geowombat
+        requires:
+          - pytest
+        source_files:
+          - tests
+        commands:
+          - pytest tests/test_series.py  # [not win]
 
 
 #     - name: geowombat-view
