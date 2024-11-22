@@ -90,37 +90,36 @@ test:
       - pytest tests/test_xarray.py
 
 outputs:
-    # - name: geowombat-coreg
-    #   requirements:
-    #     host:
-    #       - python
-    #     run:
-    #       - python 
-    #       - geowombat
-    #       # - {{ pin_compatible('geowombat', exact=True) }}
-    #       - earthpy
-    #       - pyfftw ==0.13.1
-    #       - bottleneck
-    #       - cartopy
-    #       - cmocean
-    #       - dill
-    #       - geoarray >=0.15.0
-    #       - geojson
-    #       - folium >=0.6.0,!=0.12.0
-    #       - pykrige
-    #       - arosics
-    #       - py-tools-ds  
-    #   test:
-    #     imports:
-    #       - geowombat
-    #     requires:
-    #       - pytest
-    #     source_files:
-    #       - tests
-    #     commands:
-    #       - pytest tests/test_coreg.py  # [not win] 
-#       build:
-#         skip: true  # [py==39]
+    - name: geowombat-coreg
+      requirements:
+        host:
+          - python
+        run:
+          - python 
+          - geowombat
+          - earthpy
+          - pyfftw ==0.13.1
+          - bottleneck
+          - cartopy
+          - cmocean
+          - dill
+          - geoarray >=0.15.0
+          - geojson
+          - folium >=0.6.0,!=0.12.0
+          - pykrige
+          - arosics
+          - py-tools-ds  
+      test:
+        imports:
+          - geowombat
+        requires:
+          - pytest
+        source_files:
+          - tests
+        commands:
+          - pytest tests/test_coreg.py  # [not win] 
+      build:
+        skip: true  # [py==39]
 
     - name: geowombat-docs
       requirements:
