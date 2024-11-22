@@ -119,7 +119,8 @@ outputs:
     #       - tests
     #     commands:
     #       - pytest tests/test_coreg.py  # [not win] 
-
+#       build:
+#         skip: true  # [py==39]
 
     - name: geowombat-docs
       requirements:
@@ -222,49 +223,48 @@ outputs:
           - pytest tests/test_series.py  # [not win]
 
 
-#     - name: geowombat-view
-#       requirements:
-#         host:
-#           - python
-#         run:
-#           - python 
-#           - geowombat
-#           - bokeh
-#           - descartes
-#           - ipython
-#           - graphviz  
-#       test:
-#         imports:
-#           - geowombat
+    - name: geowombat-view
+      requirements:
+        host:
+          - python
+        run:
+          - python 
+          - geowombat
+          - bokeh
+          - descartes
+          - ipython
+          - graphviz  
+      test:
+        imports:
+          - geowombat
 
-#     - name: geowombat-web
-#       requirements:
-#         host:
-#           - python
-#         run:
-#           - python 
-#           - geowombat
-#           - gsutil
-#           - requests
-#           - wget  # [not win]   
-#       test:
-#         imports:
-#           - geowombat
+    - name: geowombat-web
+      requirements:
+        host:
+          - python
+        run:
+          - python 
+          - geowombat
+          - gsutil
+          - requests
+          - wget  # [not win]   
+      test:
+        imports:
+          - geowombat
 
-#     - name: geowombat-zarr
-#       requirements:
-#         host:
-#           - python
-#         run:
-#           - python 
-#           - geowombat
-#           - zarr
-#           - numcodecs
-#       test:
-#         imports:
-#           - geowombat
-#       build:
-#         skip: true  # [py==39]
+    - name: geowombat-zarr
+      requirements:
+        host:
+          - python
+        run:
+          - python 
+          - geowombat
+          - zarr
+          - numcodecs
+      test:
+        imports:
+          - geowombat
+
 
 about:
   home: https://github.com/jgrss/geowombat
