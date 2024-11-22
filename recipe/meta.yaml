@@ -142,41 +142,41 @@ outputs:
         imports:
           - geowombat
 
-#     - name: geowombat-ml
-#       requirements:
-#         host:
-#           - python
-#         run:
-#           - python 
-#           - geowombat
-#           - scikit-learn
-#           - lightgbm
-#           - gw-sklearn-xarray  
-#       test:
-#         imports:
-#           - geowombat
-#         requires:
-#           - pytest
-#         source_files:
-#           - tests
-#         commands:
-#           - pytest tests/ml_test.py
+    - name: geowombat-ml
+      requirements:
+        host:
+          - python
+        run:
+          - python 
+          - geowombat
+          - scikit-learn
+          - lightgbm
+          - gw-sklearn-xarray  
+      test:
+        imports:
+          - geowombat
+        requires:
+          - pytest
+        source_files:
+          - tests
+        commands:
+          - pytest tests/ml_test.py
           
 
-#     - name: geowombat-perf
-#       requirements:
-#         host:
-#           - python
-#         run:
-#           - python 
-#           - geowombat
-#           - rtree
-#           - pygeos
-#           - netCDF4
-#           - ray-default >=2.3.0  # [not osx] 
-#       test:
-#         imports:
-#           - geowombat
+    - name: geowombat-perf
+      requirements:
+        host:
+          - python
+        run:
+          - python 
+          - geowombat
+          - rtree
+          - pygeos
+          - netCDF4
+          - ray-default >=2.3.0  # [not osx] 
+      test:
+        imports:
+          - geowombat
 
 #     - name: geowombat-stac
 #       requirements:
