@@ -64,6 +64,7 @@ test:
   requires:
     - pytest
     - testfixtures
+    - gdal
   source_files:
     - tests
   commands:
@@ -134,6 +135,7 @@ outputs:
         requires:
           - pytest
           - testfixtures
+          - gdal
         source_files:
           - tests
         commands:
