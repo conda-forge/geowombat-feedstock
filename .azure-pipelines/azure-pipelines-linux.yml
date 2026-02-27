@@ -11,6 +11,7 @@ jobs:
       linux_64_python3.10.____cpython:
         CONFIG: linux_64_python3.10.____cpython
         UPLOAD_PACKAGES: 'True'
+<<<<<<< HEAD
         DOCKER_IMAGE: quay.io/condaforge/linux-anvil-x86_64:alma9
       linux_64_python3.11.____cpython:
         CONFIG: linux_64_python3.11.____cpython
@@ -20,6 +21,17 @@ jobs:
         CONFIG: linux_64_python3.12.____cpython
         UPLOAD_PACKAGES: 'True'
         DOCKER_IMAGE: quay.io/condaforge/linux-anvil-x86_64:alma9
+=======
+        DOCKER_IMAGE: quay.io/condaforge/linux-anvil-cos7-x86_64
+      linux_64_numpy1.22python3.9.____cpython:
+        CONFIG: linux_64_numpy1.22python3.9.____cpython
+        UPLOAD_PACKAGES: 'True'
+        DOCKER_IMAGE: quay.io/condaforge/linux-anvil-cos7-x86_64
+      linux_64_numpy1.23python3.11.____cpython:
+        CONFIG: linux_64_numpy1.23python3.11.____cpython
+        UPLOAD_PACKAGES: 'True'
+        DOCKER_IMAGE: quay.io/condaforge/linux-anvil-cos7-x86_64
+>>>>>>> main
   timeoutInMinutes: 360
   variables: {}
 
