@@ -1,5 +1,5 @@
 {% set name = "geowombat" %}
-{% set version = "2.1.23" %}
+{% set version = "2.2.0.1" %}
 
 
 package:
@@ -8,14 +8,14 @@ package:
 
 source:
   url: https://github.com/jgrss/{{ name }}/archive/v{{ version }}.tar.gz
-  sha256: fd52794584691e7837f672d993714d863bed77602f98edc0e7c9d33f7bc32873
+  sha256: 68197ceecb8a2aee0c45ab5cd0ddeb1669a431d10932466cb11204e211d973f6
 
 build:
   number: 0
   skip: true  # [py<310 or py>312]
-  script: {{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation
   script_env:
     - SETUPTOOLS_SCM_PRETEND_VERSION={{ version }}
+  script: {{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation
 
 requirements:
   build:
