@@ -1,23 +1,16 @@
 c_compiler:
 - vs2022
+c_stdlib:
+- vs
 channel_sources:
 - conda-forge
 channel_targets:
 - conda-forge main
-<<<<<<<< HEAD:.ci_support/win_64_python3.10.____cpython.yaml
-========
-numpy:
-- '1.23'
->>>>>>>> main:.ci_support/win_64_numpy1.23python3.11.____cpython.yaml
 pin_run_as_build:
   python:
     min_pin: x.x
     max_pin: x.x
 python:
-<<<<<<<< HEAD:.ci_support/win_64_python3.10.____cpython.yaml
 - 3.10.* *_cpython
-========
-- 3.11.* *_cpython
->>>>>>>> main:.ci_support/win_64_numpy1.23python3.11.____cpython.yaml
 target_platform:
 - win-64

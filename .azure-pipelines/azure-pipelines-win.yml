@@ -11,19 +11,11 @@ jobs:
       win_64_python3.10.____cpython:
         CONFIG: win_64_python3.10.____cpython
         UPLOAD_PACKAGES: 'True'
-<<<<<<< HEAD
       win_64_python3.11.____cpython:
         CONFIG: win_64_python3.11.____cpython
         UPLOAD_PACKAGES: 'True'
       win_64_python3.12.____cpython:
         CONFIG: win_64_python3.12.____cpython
-=======
-      win_64_numpy1.22python3.9.____cpython:
-        CONFIG: win_64_numpy1.22python3.9.____cpython
->>>>>>> main
-        UPLOAD_PACKAGES: 'True'
-      win_64_numpy1.23python3.11.____cpython:
-        CONFIG: win_64_numpy1.23python3.11.____cpython
         UPLOAD_PACKAGES: 'True'
   timeoutInMinutes: 360
   variables:
@@ -38,10 +30,7 @@ jobs:
       displayName: Run Windows build
       env:
         MINIFORGE_HOME: $(MINIFORGE_HOME)
-<<<<<<< HEAD
         CONDA_BLD_PATH: $(CONDA_BLD_PATH)
-=======
->>>>>>> main
         PYTHONUNBUFFERED: 1
         CONFIG: $(CONFIG)
         CI: azure
