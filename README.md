@@ -9,7 +9,7 @@ Package license: MIT
 
 Summary: GeoWombat provides utilities to process geospatial raster data.
 
-Development: https://github.com/jgrss
+Development: https://github.com/jgrss/geowombat
 
 Documentation: https://geowombat.readthedocs.io/
 
@@ -31,115 +31,87 @@ Current build status
         <table>
           <thead><tr><th>Variant</th><th>Status</th></tr></thead>
           <tbody><tr>
-              <td>linux_64_numpy1.22python3.10.____cpython</td>
+              <td>linux_64_python3.10.____cpython</td>
               <td>
                 <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=10789&branchName=main">
-                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/geowombat-feedstock?branchName=main&jobName=linux&configuration=linux%20linux_64_numpy1.22python3.10.____cpython" alt="variant">
+                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/geowombat-feedstock?branchName=main&jobName=linux&configuration=linux%20linux_64_python3.10.____cpython" alt="variant">
                 </a>
               </td>
             </tr><tr>
-              <td>linux_64_numpy1.22python3.8.____cpython</td>
+              <td>linux_64_python3.11.____cpython</td>
               <td>
                 <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=10789&branchName=main">
-                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/geowombat-feedstock?branchName=main&jobName=linux&configuration=linux%20linux_64_numpy1.22python3.8.____cpython" alt="variant">
+                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/geowombat-feedstock?branchName=main&jobName=linux&configuration=linux%20linux_64_python3.11.____cpython" alt="variant">
                 </a>
               </td>
             </tr><tr>
-              <td>linux_64_numpy1.22python3.9.____cpython</td>
+              <td>linux_64_python3.12.____cpython</td>
               <td>
                 <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=10789&branchName=main">
-                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/geowombat-feedstock?branchName=main&jobName=linux&configuration=linux%20linux_64_numpy1.22python3.9.____cpython" alt="variant">
+                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/geowombat-feedstock?branchName=main&jobName=linux&configuration=linux%20linux_64_python3.12.____cpython" alt="variant">
                 </a>
               </td>
             </tr><tr>
-              <td>linux_64_numpy1.23python3.11.____cpython</td>
+              <td>osx_64_python3.10.____cpython</td>
               <td>
                 <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=10789&branchName=main">
-                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/geowombat-feedstock?branchName=main&jobName=linux&configuration=linux%20linux_64_numpy1.23python3.11.____cpython" alt="variant">
+                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/geowombat-feedstock?branchName=main&jobName=osx&configuration=osx%20osx_64_python3.10.____cpython" alt="variant">
                 </a>
               </td>
             </tr><tr>
-              <td>osx_64_numpy1.22python3.10.____cpython</td>
+              <td>osx_64_python3.11.____cpython</td>
               <td>
                 <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=10789&branchName=main">
-                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/geowombat-feedstock?branchName=main&jobName=osx&configuration=osx%20osx_64_numpy1.22python3.10.____cpython" alt="variant">
+                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/geowombat-feedstock?branchName=main&jobName=osx&configuration=osx%20osx_64_python3.11.____cpython" alt="variant">
                 </a>
               </td>
             </tr><tr>
-              <td>osx_64_numpy1.22python3.8.____cpython</td>
+              <td>osx_64_python3.12.____cpython</td>
               <td>
                 <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=10789&branchName=main">
-                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/geowombat-feedstock?branchName=main&jobName=osx&configuration=osx%20osx_64_numpy1.22python3.8.____cpython" alt="variant">
+                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/geowombat-feedstock?branchName=main&jobName=osx&configuration=osx%20osx_64_python3.12.____cpython" alt="variant">
                 </a>
               </td>
             </tr><tr>
-              <td>osx_64_numpy1.22python3.9.____cpython</td>
+              <td>osx_arm64_python3.10.____cpython</td>
               <td>
                 <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=10789&branchName=main">
-                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/geowombat-feedstock?branchName=main&jobName=osx&configuration=osx%20osx_64_numpy1.22python3.9.____cpython" alt="variant">
+                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/geowombat-feedstock?branchName=main&jobName=osx&configuration=osx%20osx_arm64_python3.10.____cpython" alt="variant">
                 </a>
               </td>
             </tr><tr>
-              <td>osx_64_numpy1.23python3.11.____cpython</td>
+              <td>osx_arm64_python3.11.____cpython</td>
               <td>
                 <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=10789&branchName=main">
-                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/geowombat-feedstock?branchName=main&jobName=osx&configuration=osx%20osx_64_numpy1.23python3.11.____cpython" alt="variant">
+                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/geowombat-feedstock?branchName=main&jobName=osx&configuration=osx%20osx_arm64_python3.11.____cpython" alt="variant">
                 </a>
               </td>
             </tr><tr>
-              <td>osx_arm64_numpy1.22python3.10.____cpython</td>
+              <td>osx_arm64_python3.12.____cpython</td>
               <td>
                 <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=10789&branchName=main">
-                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/geowombat-feedstock?branchName=main&jobName=osx&configuration=osx%20osx_arm64_numpy1.22python3.10.____cpython" alt="variant">
+                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/geowombat-feedstock?branchName=main&jobName=osx&configuration=osx%20osx_arm64_python3.12.____cpython" alt="variant">
                 </a>
               </td>
             </tr><tr>
-              <td>osx_arm64_numpy1.22python3.8.____cpython</td>
+              <td>win_64_python3.10.____cpython</td>
               <td>
                 <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=10789&branchName=main">
-                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/geowombat-feedstock?branchName=main&jobName=osx&configuration=osx%20osx_arm64_numpy1.22python3.8.____cpython" alt="variant">
+                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/geowombat-feedstock?branchName=main&jobName=win&configuration=win%20win_64_python3.10.____cpython" alt="variant">
                 </a>
               </td>
             </tr><tr>
-              <td>osx_arm64_numpy1.22python3.9.____cpython</td>
+              <td>win_64_python3.11.____cpython</td>
               <td>
                 <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=10789&branchName=main">
-                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/geowombat-feedstock?branchName=main&jobName=osx&configuration=osx%20osx_arm64_numpy1.22python3.9.____cpython" alt="variant">
+                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/geowombat-feedstock?branchName=main&jobName=win&configuration=win%20win_64_python3.11.____cpython" alt="variant">
                 </a>
               </td>
             </tr><tr>
-              <td>osx_arm64_numpy1.23python3.11.____cpython</td>
+              <td>win_64_python3.12.____cpython</td>
               <td>
                 <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=10789&branchName=main">
-                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/geowombat-feedstock?branchName=main&jobName=osx&configuration=osx%20osx_arm64_numpy1.23python3.11.____cpython" alt="variant">
-                </a>
-              </td>
-            </tr><tr>
-              <td>win_64_numpy1.22python3.10.____cpython</td>
-              <td>
-                <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=10789&branchName=main">
-                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/geowombat-feedstock?branchName=main&jobName=win&configuration=win%20win_64_numpy1.22python3.10.____cpython" alt="variant">
-                </a>
-              </td>
-            </tr><tr>
-              <td>win_64_numpy1.22python3.8.____cpython</td>
-              <td>
-                <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=10789&branchName=main">
-                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/geowombat-feedstock?branchName=main&jobName=win&configuration=win%20win_64_numpy1.22python3.8.____cpython" alt="variant">
-                </a>
-              </td>
-            </tr><tr>
-              <td>win_64_numpy1.22python3.9.____cpython</td>
-              <td>
-                <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=10789&branchName=main">
-                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/geowombat-feedstock?branchName=main&jobName=win&configuration=win%20win_64_numpy1.22python3.9.____cpython" alt="variant">
-                </a>
-              </td>
-            </tr><tr>
-              <td>win_64_numpy1.23python3.11.____cpython</td>
-              <td>
-                <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=10789&branchName=main">
-                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/geowombat-feedstock?branchName=main&jobName=win&configuration=win%20win_64_numpy1.23python3.11.____cpython" alt="variant">
+                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/geowombat-feedstock?branchName=main&jobName=win&configuration=win%20win_64_python3.12.____cpython" alt="variant">
                 </a>
               </td>
             </tr>
@@ -162,6 +134,7 @@ Current release info
 | [![Conda Recipe](https://img.shields.io/badge/recipe-geowombat--perf-green.svg)](https://anaconda.org/conda-forge/geowombat-perf) | [![Conda Downloads](https://img.shields.io/conda/dn/conda-forge/geowombat-perf.svg)](https://anaconda.org/conda-forge/geowombat-perf) | [![Conda Version](https://img.shields.io/conda/vn/conda-forge/geowombat-perf.svg)](https://anaconda.org/conda-forge/geowombat-perf) | [![Conda Platforms](https://img.shields.io/conda/pn/conda-forge/geowombat-perf.svg)](https://anaconda.org/conda-forge/geowombat-perf) |
 | [![Conda Recipe](https://img.shields.io/badge/recipe-geowombat--stac-green.svg)](https://anaconda.org/conda-forge/geowombat-stac) | [![Conda Downloads](https://img.shields.io/conda/dn/conda-forge/geowombat-stac.svg)](https://anaconda.org/conda-forge/geowombat-stac) | [![Conda Version](https://img.shields.io/conda/vn/conda-forge/geowombat-stac.svg)](https://anaconda.org/conda-forge/geowombat-stac) | [![Conda Platforms](https://img.shields.io/conda/pn/conda-forge/geowombat-stac.svg)](https://anaconda.org/conda-forge/geowombat-stac) |
 | [![Conda Recipe](https://img.shields.io/badge/recipe-geowombat--tests-green.svg)](https://anaconda.org/conda-forge/geowombat-tests) | [![Conda Downloads](https://img.shields.io/conda/dn/conda-forge/geowombat-tests.svg)](https://anaconda.org/conda-forge/geowombat-tests) | [![Conda Version](https://img.shields.io/conda/vn/conda-forge/geowombat-tests.svg)](https://anaconda.org/conda-forge/geowombat-tests) | [![Conda Platforms](https://img.shields.io/conda/pn/conda-forge/geowombat-tests.svg)](https://anaconda.org/conda-forge/geowombat-tests) |
+| [![Conda Recipe](https://img.shields.io/badge/recipe-geowombat--time-green.svg)](https://anaconda.org/conda-forge/geowombat-time) | [![Conda Downloads](https://img.shields.io/conda/dn/conda-forge/geowombat-time.svg)](https://anaconda.org/conda-forge/geowombat-time) | [![Conda Version](https://img.shields.io/conda/vn/conda-forge/geowombat-time.svg)](https://anaconda.org/conda-forge/geowombat-time) | [![Conda Platforms](https://img.shields.io/conda/pn/conda-forge/geowombat-time.svg)](https://anaconda.org/conda-forge/geowombat-time) |
 | [![Conda Recipe](https://img.shields.io/badge/recipe-geowombat--view-green.svg)](https://anaconda.org/conda-forge/geowombat-view) | [![Conda Downloads](https://img.shields.io/conda/dn/conda-forge/geowombat-view.svg)](https://anaconda.org/conda-forge/geowombat-view) | [![Conda Version](https://img.shields.io/conda/vn/conda-forge/geowombat-view.svg)](https://anaconda.org/conda-forge/geowombat-view) | [![Conda Platforms](https://img.shields.io/conda/pn/conda-forge/geowombat-view.svg)](https://anaconda.org/conda-forge/geowombat-view) |
 | [![Conda Recipe](https://img.shields.io/badge/recipe-geowombat--web-green.svg)](https://anaconda.org/conda-forge/geowombat-web) | [![Conda Downloads](https://img.shields.io/conda/dn/conda-forge/geowombat-web.svg)](https://anaconda.org/conda-forge/geowombat-web) | [![Conda Version](https://img.shields.io/conda/vn/conda-forge/geowombat-web.svg)](https://anaconda.org/conda-forge/geowombat-web) | [![Conda Platforms](https://img.shields.io/conda/pn/conda-forge/geowombat-web.svg)](https://anaconda.org/conda-forge/geowombat-web) |
 | [![Conda Recipe](https://img.shields.io/badge/recipe-geowombat--zarr-green.svg)](https://anaconda.org/conda-forge/geowombat-zarr) | [![Conda Downloads](https://img.shields.io/conda/dn/conda-forge/geowombat-zarr.svg)](https://anaconda.org/conda-forge/geowombat-zarr) | [![Conda Version](https://img.shields.io/conda/vn/conda-forge/geowombat-zarr.svg)](https://anaconda.org/conda-forge/geowombat-zarr) | [![Conda Platforms](https://img.shields.io/conda/pn/conda-forge/geowombat-zarr.svg)](https://anaconda.org/conda-forge/geowombat-zarr) |
@@ -176,16 +149,16 @@ conda config --add channels conda-forge
 conda config --set channel_priority strict
 ```
 
-Once the `conda-forge` channel has been enabled, `geowombat, geowombat-coreg, geowombat-docs, geowombat-ml, geowombat-perf, geowombat-stac, geowombat-tests, geowombat-view, geowombat-web, geowombat-zarr` can be installed with `conda`:
+Once the `conda-forge` channel has been enabled, `geowombat, geowombat-coreg, geowombat-docs, geowombat-ml, geowombat-perf, geowombat-stac, geowombat-tests, geowombat-time, geowombat-view, geowombat-web, geowombat-zarr` can be installed with `conda`:
 
 ```
-conda install geowombat geowombat-coreg geowombat-docs geowombat-ml geowombat-perf geowombat-stac geowombat-tests geowombat-view geowombat-web geowombat-zarr
+conda install geowombat geowombat-coreg geowombat-docs geowombat-ml geowombat-perf geowombat-stac geowombat-tests geowombat-time geowombat-view geowombat-web geowombat-zarr
 ```
 
 or with `mamba`:
 
 ```
-mamba install geowombat geowombat-coreg geowombat-docs geowombat-ml geowombat-perf geowombat-stac geowombat-tests geowombat-view geowombat-web geowombat-zarr
+mamba install geowombat geowombat-coreg geowombat-docs geowombat-ml geowombat-perf geowombat-stac geowombat-tests geowombat-time geowombat-view geowombat-web geowombat-zarr
 ```
 
 It is possible to list all of the versions of `geowombat` available on your platform with `conda`:
@@ -235,12 +208,12 @@ it is possible to build and upload installable packages to the
 [conda-forge](https://anaconda.org/conda-forge) [anaconda.org](https://anaconda.org/)
 channel for Linux, Windows and OSX respectively.
 
-To manage the continuous integration and simplify feedstock maintenance
+To manage the continuous integration and simplify feedstock maintenance,
 [conda-smithy](https://github.com/conda-forge/conda-smithy) has been developed.
 Using the ``conda-forge.yml`` within this repository, it is possible to re-render all of
 this feedstock's supporting files (e.g. the CI configuration files) with ``conda smithy rerender``.
 
-For more information please check the [conda-forge documentation](https://conda-forge.org/docs/).
+For more information, please check the [conda-forge documentation](https://conda-forge.org/docs/).
 
 Terminology
 ===========
@@ -267,7 +240,7 @@ merged, the recipe will be re-built and uploaded automatically to the
 everybody to install and use from the `conda-forge` channel.
 Note that all branches in the conda-forge/geowombat-feedstock are
 immediately built and any created packages are uploaded, so PRs should be based
-on branches in forks and branches in the main repository should only be used to
+on branches in forks, and branches in the main repository should only be used to
 build distinct package versions.
 
 In order to produce a uniquely identifiable distribution:
