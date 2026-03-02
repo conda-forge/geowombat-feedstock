@@ -179,16 +179,16 @@ outputs:
           - pykrige
           - arosics
           - py-tools-ds >=0.18.0
-          - pymorph
+          # - pymorph  # not on conda-forge, install via pip
       test:
         imports:
           - geowombat
-        requires:
-          - pytest
-        source_files:
-          - tests
-        commands:
-          - pytest tests/test_coreg.py  # [not win]
+        # requires:
+        #   - pytest
+        # source_files:
+        #   - tests
+        # commands:
+        #   - pytest tests/test_coreg.py  # [not win]
 
 
     - name: geowombat-docs
