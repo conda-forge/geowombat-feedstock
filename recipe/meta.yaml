@@ -88,6 +88,10 @@ test:
 
 outputs:
     - name: geowombat
+      script: {{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation
+      build:
+        script_env:
+          - SETUPTOOLS_SCM_PRETEND_VERSION={{ version }}
       requirements:
         build:
           - python                                 # [build_platform != target_platform]
