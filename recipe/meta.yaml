@@ -132,6 +132,7 @@ outputs:
           - cryptography
           - threadpoolctl
           - affine
+          - dateparser
 
       test:
         imports:
@@ -301,20 +302,6 @@ outputs:
           - tests
         commands:
           - pytest tests/test_series.py  # [not win]
-
-
-    - name: geowombat-time
-      requirements:
-        host:
-          - python
-        run:
-          - python
-          - {{ pin_subpackage('geowombat', exact=True) }}
-          - dateparser
-      test:
-        imports:
-          - geowombat
-
 
     - name: geowombat-view
       requirements:
