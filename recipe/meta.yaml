@@ -328,7 +328,7 @@ outputs:
           - {{ pin_subpackage('geowombat', exact=True) }}
           - gsutil
           - requests
-          - wget
+          - wget  # [not win]
       test:
         imports:
           - geowombat
