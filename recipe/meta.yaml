@@ -270,7 +270,7 @@ outputs:
           - planetary-computer
           - Rich
           - wget  # [not win]
-          - wrapt-timeout-decorator
+          # - wrapt-timeout-decorator  # not on conda-forge
       test:
         imports:
           - geowombat
