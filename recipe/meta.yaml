@@ -171,7 +171,7 @@ outputs:
         - python
         - {{ pin_subpackage('geowombat', exact=True) }}
         - earthpy
-        - pyfftw ==0.13.1
+        - pyfftw >=0.13.1
         - bottleneck
         - cartopy
         - cmocean
