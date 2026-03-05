@@ -250,7 +250,6 @@ outputs:
         - python
         - {{ pin_subpackage('geowombat', exact=True) }}
         - rtree
-        - pygeos
         - netCDF4
         - ray-default >=2.3.0    # [not osx]
     test:
