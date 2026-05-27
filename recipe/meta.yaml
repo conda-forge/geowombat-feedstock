@@ -55,6 +55,9 @@ requirements:
     - cryptography
     - threadpoolctl
     - affine
+    - psutil
+    - pyyaml
+    - python-graphviz
 
 test:
   imports:
@@ -133,6 +136,9 @@ outputs:
         - threadpoolctl
         - affine
         - dateparser
+        - psutil
+        - pyyaml
+        - python-graphviz
 
     test:
       imports:
@@ -211,8 +217,11 @@ outputs:
         - sphinx-copybutton >=0.5.0
         - sphinx-autodoc-typehints
         - ipython
-        - graphviz
+        - python-graphviz
         - gw-sklearn-xarray
+        - nbsphinx >=0.9,<1
+        - ipykernel
+        - myst-parser >=1.0,<2
     test:
       imports:
         - geowombat
@@ -312,7 +321,7 @@ outputs:
         - ipython
         - bokeh
         - descartes
-        - graphviz
+        - python-graphviz
     test:
       imports:
         - geowombat
@@ -342,6 +351,55 @@ outputs:
         - {{ pin_subpackage('geowombat', exact=True) }}
         - zarr
         - numcodecs
+    test:
+      imports:
+        - geowombat
+
+
+  - name: geowombat-dl
+    requirements:
+      host:
+        - python
+      run:
+        - python
+        - {{ pin_subpackage('geowombat', exact=True) }}
+        - pytorch >=2.0.0
+        - pytorch-tabnet >=4.0
+        - torchgeo >=0.6.0
+        - segmentation-models-pytorch >=0.3.0
+    test:
+      imports:
+        - geowombat
+
+
+  - name: geowombat-detect
+    requirements:
+      host:
+        - python
+      run:
+        - python
+        - {{ pin_subpackage('geowombat', exact=True) }}
+        - ultralytics >=8.2
+        - torchmetrics >=1.0
+        - pycocotools
+        - pyyaml
+        - pillow
+        # opencv-python>=4.12 requires numpy>=2; the rest of geowombat
+        # pins numpy<2. Keep the older opencv build compatible with that.
+        - py-opencv <4.12
+    test:
+      imports:
+        - geowombat
+
+
+  - name: geowombat-sam
+    requirements:
+      host:
+        - python
+      run:
+        - python
+        - {{ pin_subpackage('geowombat', exact=True) }}
+        # - segment-anything  # not on conda-forge, install via pip
     test:
       imports:
         - geowombat
