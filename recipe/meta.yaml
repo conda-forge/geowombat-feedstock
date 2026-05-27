@@ -364,7 +364,9 @@ outputs:
         - python
         - {{ pin_subpackage('geowombat', exact=True) }}
         - pytorch >=2.0.0
-        - pytorch-tabnet >=4.0
+        # pytorch-tabnet >=4.0 omitted: the conda-forge build pins
+        # pytorch <2.0, which conflicts with torchgeo/SMP. Install via
+        # pip if needed: `pip install pytorch-tabnet`.
         - torchgeo >=0.6.0
         - segmentation-models-pytorch >=0.3.0
     test:
