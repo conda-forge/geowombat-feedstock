@@ -26,7 +26,7 @@ chmod +x "${micromamba_exe}"
 echo "Creating environment"
 "${micromamba_exe}" create --yes --root-prefix "${MAMBA_ROOT_PREFIX}" --prefix "${MINIFORGE_HOME}" \
   --channel conda-forge \
-  pip python=3.12 conda-build boa conda-forge-ci-setup=4 "conda-build>=26.3"
+  pip python=3.12 conda-build conda-libmamba-solver conda-forge-ci-setup=4 "conda-build>=26.3"
 echo "Moving pkgs cache from ${MAMBA_ROOT_PREFIX} to ${MINIFORGE_HOME}"
 mv "${MAMBA_ROOT_PREFIX}/pkgs" "${MINIFORGE_HOME}"
 echo "Cleaning up micromamba"
@@ -112,7 +112,7 @@ else
         EXTRA_CB_OPTIONS="${EXTRA_CB_OPTIONS:-} --no-test"
     fi
 
-    conda-mambabuild ./recipe -m ./.ci_support/${CONFIG}.yaml \
+    CONDA_SOLVER=libmamba conda-build ./recipe -m ./.ci_support/${CONFIG}.yaml \
         --suppress-variables ${EXTRA_CB_OPTIONS:-} \
         --clobber-file ./.ci_support/clobber_${CONFIG}.yaml \
         --extra-meta flow_run_id="$flow_run_id" remote_url="$remote_url" sha="$sha"
