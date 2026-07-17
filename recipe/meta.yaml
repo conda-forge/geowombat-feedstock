@@ -11,15 +11,15 @@ source:
   sha256: 8fb933560903b83bd7c1cf4a87d887f6aa84d28dc4d2e1670104993756c47716
 
 build:
-  number: 0
-  skip: true  # [py<310 or py>312]
+  number: 1
+  skip: true  # [py<310]
 
 requirements:
   build:
     - python                                 # [build_platform != target_platform]
     - cross-python_{{ target_platform }}     # [build_platform != target_platform]
     - cython                                 # [build_platform != target_platform]
-    - numpy <2                               # [build_platform != target_platform]
+    - numpy >=2                               # [build_platform != target_platform]
     - {{ compiler('c') }}
     - {{ stdlib("c") }}
     - ninja
@@ -28,7 +28,7 @@ requirements:
     - python
     - meson-python
     - cython
-    - numpy <2
+    - numpy >=2
     - setuptools-scm
     - pip
 
@@ -39,7 +39,7 @@ requirements:
     - geopandas
     - joblib
     - matplotlib-base
-    - numpy <2
+    - numpy >=2
     - pandas
     - pyproj
     - rasterio <1.5.0
@@ -99,7 +99,7 @@ outputs:
         - python                                   # [build_platform != target_platform]
         - cross-python_{{ target_platform }}       # [build_platform != target_platform]
         - cython                                   # [build_platform != target_platform]
-        - numpy <2                                 # [build_platform != target_platform]
+        - numpy >=2                                 # [build_platform != target_platform]
         - {{ compiler('c') }}
         - {{ stdlib("c") }}
         - ninja
@@ -108,7 +108,7 @@ outputs:
         - python
         - meson-python
         - cython
-        - numpy <2
+        - numpy >=2
         - setuptools-scm
         - pip
 
@@ -119,7 +119,7 @@ outputs:
         - geopandas
         - joblib
         - matplotlib-base
-        - numpy <2
+        - numpy >=2
         - pandas
         - pyproj
         - rasterio <1.5.0
